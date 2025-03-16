@@ -1,0 +1,9 @@
+{
+  "general": {
+    "logIn": "Iniciar sesión"
+  },
+  "navbar": {
+    "hotels": "Hoteles",
+    "aboutUs": "Sobre nosotros"
+  }
+}
