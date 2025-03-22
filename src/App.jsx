@@ -2,6 +2,7 @@ import {createBrowserRouter, Route, Router, RouterProvider, Routes} from "react-
 import {CustomNavbar} from './components/CustomNavbar.jsx';
 import {Home} from "./pages/Home.jsx";
 import { useTranslation } from 'react-i18next';
+import {CustomFooter} from "./components/CustomFooter.jsx";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,7 @@ function App() {
       <>
         <CustomNavbar t={t} i18n={i18n}></CustomNavbar>
         <RouterProvider router={router}/>
+        <CustomFooter></CustomFooter>
       </>
     )
 }
