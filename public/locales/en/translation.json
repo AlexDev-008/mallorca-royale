@@ -1,9 +1,20 @@
 {
   "general": {
-    "logIn": "Log in"
+    "logIn": "Log in",
+    "search": "Search"
   },
   "navbar": {
     "hotels": "Hotels",
     "aboutUs": "About us"
+  },
+  "home": {
+    "homePhrase": "FIND YOUR PERFECT HOTEL",
+    "featureTitle1": "Search your hotel",
+    "featureDescription1": "Filter and search hotels based on your needs: location, services, price and more.",
+    "featureTitle2": "Opinions and ratings",
+    "featureDescription2": "Read reviews from other travelers and leave your own opinion to help others make the best decision.",
+    "featureTitle3": "Prices in your currency",
+    "featureDescription3": "Consult prices of hotels in your local currency. No surprises in the price!",
+    "carrouselTitle": "Our best hotels"
   }
 }

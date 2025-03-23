@@ -3,11 +3,16 @@ import {CustomNavbar} from './components/CustomNavbar.jsx';
 import {Home} from "./pages/Home.jsx";
 import { useTranslation } from 'react-i18next';
 import {CustomFooter} from "./components/CustomFooter.jsx";
+import {Hotel} from "./pages/Hotel.jsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Home />,
+    },
+    {
+        path: "/hotel/:hotelName",
+        element: <Hotel />,
     }
 ]);
 
@@ -18,7 +23,7 @@ function App() {
     return (
       <>
         <CustomNavbar t={t} i18n={i18n}></CustomNavbar>
-        <RouterProvider router={router}/>
+        <RouterProvider router={router} key={i18n.language}/>
         <CustomFooter></CustomFooter>
       </>
     )
