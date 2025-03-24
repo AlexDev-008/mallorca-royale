@@ -1,0 +1,899 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Ona Palmira Paradise Paguera",
+    "description": "Un hotel de 4 estrellas situado en Paguera, Mallorca, que ofrece una experiencia de relax y confort a pocos minutos de la playa.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle dels Ametllers, 9",
+      "addressLocality": "Paguera",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07160",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.538410,
+      "longitude": 2.459084
+    },
+    "telephone": "+34 871 181 613",
+    "url": "https://www.onahotels.com/es/hotel-palmira-paradise-paguera/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "4",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/onapalmira/img1.webp",
+      "https://www.mallorcaroyale.com/images/onapalmira/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Explora el Ona Palmira Paradise Paguera",
+      "description": "Descubre las instalaciones y servicios que ofrece el Ona Palmira Paradise Paguera en este recorrido virtual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/onapalmira_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/onapalmira_tour.mp4"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "María Gómez"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "10",
+          "bestRating": "10"
+        },
+        "reviewBody": "Un lugar mágico, perfecto para desconectar. El servicio es excepcional."
+      }
+    ],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "true" }
+    ],
+    "priceRange": "150"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Hotel Convent de la Missió",
+    "description": "Un hotel boutique de 5 estrellas ubicado en un antiguo convento del siglo XVII en el centro histórico de Palma de Mallorca.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrer de la Missió, 7A",
+      "addressLocality": "Palma",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07003",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.573580,
+      "longitude": 2.651060
+    },
+    "telephone": "+34 971 227 347",
+    "url": "https://www.conventdelamissio.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/conventdelamissio/img1.webp",
+      "https://www.mallorcaroyale.com/images/conventdelamissio/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Descubre el Hotel Convent de la Missió",
+      "description": "Sumérgete en la historia y el lujo del Hotel Convent de la Missió en este recorrido visual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/conventdelamissio_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/conventdelamissio_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "true" }
+    ],
+    "priceRange": "350"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Hotel Nixe Palace",
+    "description": "Un lujoso hotel de 5 estrellas con vistas al mar Mediterráneo, ubicado junto a la playa de Cala Mayor en Palma de Mallorca.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Avenida Joan Miró, 269",
+      "addressLocality": "Palma",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07015",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.55270,
+      "longitude": 2.60770
+    },
+    "telephone": "+34 971 700 888",
+    "url": "https://www.hotelmallorcanixepalace.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/nixepalace/img1.webp",
+      "https://www.mallorcaroyale.com/images/nixepalace/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Descubre el Hotel Nixe Palace",
+      "description": "Explora las lujosas instalaciones del Hotel Nixe Palace en este recorrido visual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/nixepalace_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/nixepalace_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "true" }
+    ],
+    "priceRange": "400"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Cap Rocat",
+    "description": "Un exclusivo hotel de 5 estrellas ubicado en una antigua fortaleza militar restaurada, con impresionantes vistas a la bahía de Palma.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ctra. d'Enderrocat, s/n",
+      "addressLocality": "Cala Blava",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07609",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.47600,
+      "longitude": 2.72405
+    },
+    "telephone": "+34 971 747 878",
+    "url": "https://www.caprocat.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/caprocat/img1.webp",
+      "https://www.mallorcaroyale.com/images/caprocat/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Explora el Hotel Cap Rocat",
+      "description": "Sumérgete en el lujo y la historia del Hotel Cap Rocat en este recorrido visual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/caprocat_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/caprocat_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "false" }
+    ],
+    "priceRange": "700"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Sant Francesc Hotel Singular",
+    "description": "Un elegante hotel boutique de 5 estrellas ubicado en un antiguo palacio del siglo XIX en el corazón de Palma.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plaza de Sant Francesc, 5",
+      "addressLocality": "Palma",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07001",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.56899,
+      "longitude": 2.65264
+    },
+    "telephone": "+34 971 495 000",
+    "url": "https://www.hotelsantfrancesc.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/santfrancesc/img1.webp",
+      "https://www.mallorcaroyale.com/images/santfrancesc/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Descubre el Sant Francesc Hotel Singular",
+      "description": "Explora la belleza y el encanto del Sant Francesc Hotel Singular en este recorrido visual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/santfrancesc_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/santfrancesc_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "false" }
+    ],
+    "priceRange": "500"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Hotel Can Alomar",
+    "description": "Un hotel boutique de lujo ubicado en un palacio reformado en la prestigiosa avenida Paseo del Borne, en Palma.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Paseo del Borne, 27",
+      "addressLocality": "Palma",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07012",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.5698,
+      "longitude": 2.64611
+    },
+    "telephone": "+34 971 715 963",
+    "url": "https://www.canalomarhotel.com/es/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/canalomar/img1.webp",
+      "https://www.mallorcaroyale.com/images/canalomar/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Explora el Hotel Can Alomar",
+      "description": "Descubre la elegancia y el confort del Hotel Can Alomar en este recorrido visual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/canalomar_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/canalomar_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "false" }
+    ],
+    "priceRange": "450"
+  },
+  { 
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Hotel Hospes Maricel & Spa",
+    "description": "Un hotel de 5 estrellas con vistas impresionantes al mar, reconocido por su arquitectura señorial y su spa de lujo.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carretera d'Andratx, 11",
+      "addressLocality": "Cas Català",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07181",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.54724,
+      "longitude": 2.59632
+    },
+    "telephone": "+34 971 707 744",
+    "url": "https://www.hospes.com/maricel/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/maricel/img1.webp",
+      "https://www.mallorcaroyale.com/images/maricel/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Descubre el Hotel Hospes Maricel & Spa",
+      "description": "Explora el lujo y la serenidad del Hotel Hospes Maricel & Spa en este recorrido visual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/maricel_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/maricel_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "false" }
+    ],
+    "priceRange": "600"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Belmond La Residencia",
+    "description": "Un encantador hotel de lujo en el pintoresco pueblo de Deià, rodeado de montañas y vistas espectaculares.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Son Canals, s/n",
+      "addressLocality": "Deià",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07179",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.74926,
+      "longitude": 2.64919
+    },
+    "telephone": "+34 971 639 011",
+    "url": "https://www.belmond.com/la-residencia/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/laresidencia/img1.webp",
+      "https://www.mallorcaroyale.com/images/laresidencia/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Explora Belmond La Residencia",
+      "description": "Conoce el lujo y la serenidad de Belmond La Residencia en este recorrido visual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/laresidencia_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/laresidencia_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "false" }
+    ],
+    "priceRange": "750"
+  },  
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Finca Serena Mallorca",
+    "description": "Un exclusivo hotel rural de 5 estrellas rodeado de viñedos y olivares, ideal para el descanso y la desconexión.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ma-3200, km 3",
+      "addressLocality": "Montuïri",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07230",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.58714,
+      "longitude": 2.94626
+    },
+    "telephone": "+34 871 871 870",
+    "url": "https://www.fincaserenamallorca.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/fincaserena/img1.webp",
+      "https://www.mallorcaroyale.com/images/fincaserena/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Explora Finca Serena Mallorca",
+      "description": "Sumérgete en la tranquilidad y la naturaleza en este recorrido visual por Finca Serena Mallorca.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/fincaserena_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/fincaserena_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "true" }
+    ],
+    "priceRange": "500"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Hotel Gloria de Sant Jaume",
+    "description": "Un hotel boutique de lujo ubicado en un edificio histórico del siglo XIX en el corazón de Palma de Mallorca.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrer de Sant Jaume, 18",
+      "addressLocality": "Palma",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07012",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.57335,
+      "longitude": 2.64801
+    },
+    "telephone": "+34 971 710 210",
+    "url": "https://www.gloriasantjaume.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/gloriasantjaume/img1.webp",
+      "https://www.mallorcaroyale.com/images/gloriasantjaume/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Explora el Hotel Gloria de Sant Jaume",
+      "description": "Sumérgete en la elegancia del Hotel Gloria de Sant Jaume con este recorrido virtual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/gloriasantjaume_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/gloriasantjaume_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "true" }
+    ],
+    "priceRange": "390"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Can Bordoy Grand House & Garden",
+    "description": "Un exclusivo hotel boutique de 5 estrellas en el casco antiguo de Palma, con un exuberante jardín privado y suites de lujo.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrer del Forn de la Glòria, 14",
+      "addressLocality": "Palma",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07012",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.56963,
+      "longitude": 2.64442
+    },
+    "telephone": "+34 971 214 220",
+    "url": "https://www.canbordoy.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/canbordoy/img1.webp",
+      "https://www.mallorcaroyale.com/images/canbordoy/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Descubre Can Bordoy Grand House & Garden",
+      "description": "Sumérgete en la elegancia y el encanto del Can Bordoy Grand House & Garden con este recorrido virtual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/canbordoy_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/canbordoy_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "false" }
+    ],
+    "priceRange": "550"
+  }, 
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Son Brull Hotel & Spa",
+    "description": "Un hotel boutique de 5 estrellas situado en una antigua casa señorial mallorquina, rodeado de viñedos y campos de olivos.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carretera Palma-Pollença, km 50",
+      "addressLocality": "Pollença",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07460",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.86412,
+      "longitude":  3.02456
+    },
+    "telephone": "+34 971 535 353",
+    "url": "https://www.sonbrull.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/sonbrull/img1.webp",
+      "https://www.mallorcaroyale.com/images/sonbrull/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Descubre el Hotel Son Brull",
+      "description": "Explora el lujo y la tranquilidad de Son Brull Hotel & Spa en este recorrido virtual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/sonbrull_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/sonbrull_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "false" }
+    ],
+    "priceRange": "680"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Hotel Can Simoneta",
+    "description": "Un exclusivo hotel de 5 estrellas solo para adultos, ubicado sobre un acantilado con vistas espectaculares al mar Mediterráneo en la zona de Capdepera.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carretera Artá - Canyamel, Km 8",
+      "addressLocality": "Capdepera",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07580",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.65194,
+      "longitude": 3.43773
+    },
+    "telephone": "+34 971 816 110",
+    "url": "https://www.cansimoneta.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/cansimoneta/img1.webp",
+      "https://www.mallorcaroyale.com/images/cansimoneta/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Explora el Hotel Can Simoneta",
+      "description": "Descubre el lujo y la tranquilidad del Hotel Can Simoneta en este recorrido visual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/cansimoneta_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/cansimoneta_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "false" }
+    ],
+    "priceRange": "890"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Hotel El Llorenç Parc de la Mar",
+    "description": "Un sofisticado hotel boutique de 5 estrellas con una impresionante azotea y vistas panorámicas a la bahía de Palma.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plaça de Llorenç Villalonga, 4",
+      "addressLocality": "Palma",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07001",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.56566,
+      "longitude": 2.65298
+    },
+    "telephone": "+34 971 677 788",
+    "url": "https://www.elllorenc.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/elllorenc/img1.webp",
+      "https://www.mallorcaroyale.com/images/elllorenc/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Descubre Hotel El Llorenç Parc de la Mar",
+      "description": "Explora el lujo y las vistas inigualables del Hotel El Llorenç Parc de la Mar.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/elllorenc_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/elllorenc_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "true" }
+    ],
+    "priceRange": "600"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Sheraton Mallorca Arabella Golf Hotel",
+    "description": "Un lujoso hotel de 5 estrellas en Palma de Mallorca, rodeado por tres prestigiosos campos de golf y con un fuerte compromiso con la sostenibilidad.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Camí de Son Vida, 38",
+      "addressLocality": "Palma",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07013",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.58663,
+      "longitude": 2.59933
+    },
+    "telephone": "+34 971 783 000",
+    "url": "https://www.arabellagolfmallorca.com/hoteles/sheraton-mallorca-arabella/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/sheratonmallorca/img1.webp",
+      "https://www.mallorcaroyale.com/images/sheratonmallorca/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Descubre el Sheraton Mallorca Arabella Golf Hotel",
+      "description": "Explora este exclusivo hotel de 5 estrellas con su impresionante entorno de golf y servicios de lujo.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/sheratonmallorca_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/sheratonmallorca_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "false" }
+    ],
+    "priceRange": "450"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Kimpton Aysla Mallorca",
+    "description": "Un elegante hotel de 5 estrellas en Santa Ponsa, Mallorca, que combina lujo contemporáneo con bienestar y experiencias exclusivas.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Avenida del Golf, 37",
+      "addressLocality": "Santa Ponsa",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07180",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.50906,
+      "longitude": 2.50296
+    },
+    "telephone": "+34 871 006 200",
+    "url": "https://www.kimptonayslamallorca.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/kimptonaysla/img1.webp",
+      "https://www.mallorcaroyale.com/images/kimptonaysla/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Descubre el Kimpton Aysla Mallorca",
+      "description": "Sumérgete en el lujo y la tranquilidad del Kimpton Aysla Mallorca en este recorrido visual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/kimptonaysla_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/kimptonaysla_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "true" }
+    ],
+    "priceRange": "500"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Hotel Son Bunyola Villas",
+    "description": "Un exclusivo hotel de lujo de 5 estrellas ubicado en la impresionante Sierra de Tramuntana, Mallorca, con vistas panorámicas y un entorno natural privilegiado.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carretera Andratx-Estellencs, km 97",
+      "addressLocality": "Banyalbufar",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07191",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.6945155,
+      "longitude": 2.5385577
+    },
+    "telephone": "+34 971 851 985",
+    "url": "https://www.sonbunyola.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/sonbunyola/img1.webp",
+      "https://www.mallorcaroyale.com/images/sonbunyola/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Descubre el Hotel Son Bunyola Villas",
+      "description": "Explora la serenidad y el lujo del Hotel Son Bunyola Villas en este recorrido visual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/sonbunyola_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/sonbunyola_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "false" }
+    ],
+    "priceRange": "900"
+  },  
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Gran Hotel Sóller",
+    "description": "Un elegante hotel de 5 estrellas ubicado en el corazón de Sóller, en un edificio histórico del siglo XIX, con una combinación perfecta de lujo y tradición.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrer de Romaguera, 18",
+      "addressLocality": "Sóller",
+      "addressRegion": "Islas Baleares",
+      "postalCode": "07100",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.7676884,
+      "longitude": 2.7117842
+    },
+    "telephone": "+34 971 638 686",
+    "url": "https://www.granhotelsoller.com/",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "image": [
+      "https://www.mallorcaroyale.com/images/granhotelsoller/img1.webp",
+      "https://www.mallorcaroyale.com/images/granhotelsoller/img2.webp"
+    ],
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "Explora el Gran Hotel Sóller",
+      "description": "Descubre la elegancia y el encanto del Gran Hotel Sóller en este recorrido visual.",
+      "thumbnailUrl": "https://www.mallorcaroyale.com/videos/granhotelsoller_thumbnail.jpg",
+      "contentUrl": "https://www.mallorcaroyale.com/videos/granhotelsoller_tour.mp4"
+    },
+    "review": [],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "false" },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "true" }
+    ],
+    "priceRange": "250"
+  }
+]
+

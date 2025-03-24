@@ -6,13 +6,13 @@ import {FeaturesSection} from "../components/FeaturesSection.jsx";
 import {HotelCarrouselSection} from "../components/HotelCarrouselSection.jsx";
 import {AnimatedSection} from "../components/AnimatedSection.jsx";
 
-export function Home() {
+export function Home({hotels}) {
     return (
         <Container fluid className="m-0 p-0">
-            <HomeSearch></HomeSearch>
+            <HomeSearch hotels={hotels}></HomeSearch>
             <FeaturesSection></FeaturesSection>
             <AnimatedSection>
-                <HotelCarrouselSection></HotelCarrouselSection>
+                <HotelCarrouselSection hotels={hotels}></HotelCarrouselSection>
             </AnimatedSection>
         </Container>
     );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Col, Row} from "react-bootstrap";
 import {HotelCarrouselCard} from "./HotelCarrouselCard.jsx";
 import {EffectCoverflow} from "swiper/modules";
@@ -6,7 +6,8 @@ import {Swiper,SwiperSlide} from "swiper/react";
 import 'swiper/css';
 import {t} from "i18next";
 
-export function HotelCarrouselSection(props) {
+export function HotelCarrouselSection({hotels}) {
+
     return (
         <>
             <Row className="gx-0 p-5 m-5 text-center">
@@ -28,18 +29,19 @@ export function HotelCarrouselSection(props) {
                         }}
                         className="text-light d-flex justify-content-center align-items-center mx-5"
                     >
-                        <SwiperSlide className="swiper-slide">
-                            <HotelCarrouselCard hotelName={1} city={"Palma"} street={"C/ Gaspar y Ferrer nº16"} price={536}></HotelCarrouselCard>
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide">
-                            <HotelCarrouselCard hotelName={2} city={"Palma"} street={"C/ Gaspar y Ferrer nº16"} price={536}></HotelCarrouselCard>
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide">
-                            <HotelCarrouselCard hotelName={3} city={"Palma"} street={"C/ Gaspar y Ferrer nº16"} price={536}></HotelCarrouselCard>
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide">
-                            <HotelCarrouselCard hotelName={4} city={"Palma"} street={"C/ Gaspar y Ferrer nº16"} price={536}></HotelCarrouselCard>
-                        </SwiperSlide>
+
+                        {
+                            [...Array(4)].map((_, index) => (
+                                <SwiperSlide className="swiper-slide">
+                                    <HotelCarrouselCard
+                                        hotelName={hotels[index].name}
+                                        city={hotels[index].address.addressLocality}
+                                        street={hotels[index].address.streetAddress}
+                                        price={hotels[index].priceRange}>
+                                    </HotelCarrouselCard>
+                                </SwiperSlide>
+                            ))
+                        }
                     </Swiper>
                 </Col>
             </Row>

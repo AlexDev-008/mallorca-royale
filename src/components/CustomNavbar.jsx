@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Container, Nav, Navbar, Row} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
+import getUnicodeFlagIcon from 'country-flag-icons/unicode'
 
 export function CustomNavbar({t, i18n}) {
 
@@ -36,8 +37,8 @@ export function CustomNavbar({t, i18n}) {
                             className="me-4 fw-bold custom-select"
                             style={{ width: "70px"}}
                         >
-                            <option value="es" className="text-black">ES</option>
-                            <option value="en" className="text-black">EN</option>
+                            <option value="es" className="text-black">{"ES"}</option>
+                            <option value="en" className="text-black">{"EN"}</option>
                         </Form.Select>
                         <Button type="submit" className="ms-2">
                         {t("general.logIn")}

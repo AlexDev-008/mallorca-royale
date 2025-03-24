@@ -16,5 +16,8 @@
     "featureTitle3": "Prices in your currency",
     "featureDescription3": "Consult prices of hotels in your local currency. No surprises in the price!",
     "carrouselTitle": "Our best hotels"
+  },
+  "hotel": {
+    "perNight": " / per night"
   }
 }
