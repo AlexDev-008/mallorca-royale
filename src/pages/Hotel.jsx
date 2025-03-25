@@ -7,10 +7,26 @@ import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {t} from "i18next";
 import {MapComponent} from "../components/MapComponent.jsx";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faSpa, faPersonSwimming, faUtensils, faMusic, faDumbbell, faWifi, faBabyCarriage, faChampagneGlasses } from "@fortawesome/free-solid-svg-icons";
 
 export function Hotel() {
     const { hotelName } = useParams();
     const [hotel, setHotel] = useState(null);
+    const Icons = Object.freeze({
+        "Spa y masajes": "faSpa",
+        "Piscina": "faPersonSwimming",
+        "Restaurante gourmet": "faUtensils",
+        "Eventos y conciertos": "faMusic",
+        "Gimnasio": "faDumbbell",
+        "Wi-Fi gratuito": "faWifi",
+        "Club infantil": "faBabyCarriage",
+        "Discoteca": "faChampagneGlasses"
+    })
+
+    //Las fotos hay que ponerlas dentro de un "figure", deben ser webp y con jpg de soporte
+    //Quitar los strings de value de amenityFeatures (ponerlos como booleanos)
+    //Usar JSON-LD para web semántica
 
     useEffect(() => {
         fetch("/hotels.json")
@@ -116,8 +132,17 @@ export function Hotel() {
                             <p>{hotel.description}</p>
                         </Row>
                         <Row>
-                            <h2 className="fw-semibold">Acerca de este alojamiento</h2>
-                            <p>{hotel.description}</p>
+                            <h2 className="fw-semibold mb-3">Acerca de este alojamiento</h2>
+                            {
+                                hotel.amenityFeature.map((feature, _) => {
+                                    return feature.value ? (
+                                        <Col md={4} className="d-flex flex-row align-content-center">
+                                            <FontAwesomeIcon icon={Icons[feature.name]} className="mt-1" />
+                                            <p className="ms-3">{feature.name}</p>
+                                        </Col>
+                                    ) : null
+                                })
+                            }
                         </Row>
                     </Container>
                 </>

@@ -51,14 +51,14 @@
       }
     ],
     "amenityFeature": [
-      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
-      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
-      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
-      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "false" },
-      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "true" },
-      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
-      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "false" },
-      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "true" }
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": false },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": false },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": false },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": true }
     ],
     "priceRange": "150"
   },
@@ -198,14 +198,14 @@
     },
     "review": [],
     "amenityFeature": [
-      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
-      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
-      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": "true" },
-      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": "false" },
-      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": "false" },
-      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": "true" },
-      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": "true" },
-      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": "false" }
+      { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurante gourmet", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Eventos y conciertos", "value": false },
+      { "@type": "LocationFeatureSpecification", "name": "Gimnasio", "value": false },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Club infantil", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Discoteca", "value": false }
     ],
     "priceRange": "700"
   },

@@ -15,7 +15,8 @@
     "featureDescription2": "Lee reseñas de otros viajeros y deja tu propia opinión para ayudar a otros a tomar la mejor decisión.",
     "featureTitle3": "Precios en tu moneda",
     "featureDescription3": "Consulta el costo de los hoteles en tu moneda local. ¡Sin sorpresas en el precio!",
-    "carrouselTitle": "Nuestros mejores hoteles"
+    "carrouselTitle": "Nuestros mejores hoteles",
+    "seeHotel":  "Ver hotel"
   },
   "hotel": {
     "perNight": " / por noche"
