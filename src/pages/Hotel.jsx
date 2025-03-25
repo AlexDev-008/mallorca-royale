@@ -13,16 +13,16 @@ import { faSpa, faPersonSwimming, faUtensils, faMusic, faDumbbell, faWifi, faBab
 export function Hotel() {
     const { hotelName } = useParams();
     const [hotel, setHotel] = useState(null);
-    const Icons = Object.freeze({
-        "Spa y masajes": "faSpa",
-        "Piscina": "faPersonSwimming",
-        "Restaurante gourmet": "faUtensils",
-        "Eventos y conciertos": "faMusic",
-        "Gimnasio": "faDumbbell",
-        "Wi-Fi gratuito": "faWifi",
-        "Club infantil": "faBabyCarriage",
-        "Discoteca": "faChampagneGlasses"
-    })
+    const Icons = {
+        "Spa y masajes": faSpa,
+        "Piscina": faPersonSwimming,
+        "Restaurante gourmet": faUtensils,
+        "Eventos y conciertos": faMusic,
+        "Gimnasio": faDumbbell,
+        "Wi-Fi gratuito": faWifi,
+        "Club infantil": faBabyCarriage,
+        "Discoteca": faChampagneGlasses
+    };
 
     //Las fotos hay que ponerlas dentro de un "figure", deben ser webp y con jpg de soporte
     //Quitar los strings de value de amenityFeatures (ponerlos como booleanos)
