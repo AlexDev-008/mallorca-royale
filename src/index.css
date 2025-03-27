@@ -81,3 +81,29 @@ body{
   transform: translateY(0);
 }
 
+.btn-rating{
+  background-color: transparent !important;
+  color: #252525 !important;
+  border-color: #252525 !important;
+}
+
+.btn-rating:hover{
+  background-color: #252525 !important;
+  color: white !important;
+}
+
+.btn-rating-selected{
+  background-color: #252525 !important;
+  color: white !important;
+}
+
+.btn-outline{
+  background: transparent !important;
+  color: #252525 !important;
+  border-color: #252525 !important;
+}
+
+.btn-outline:hover{
+  background-color: #252525 !important;
+  color: white !important;
+}

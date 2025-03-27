@@ -1,8 +1,4 @@
-import {Col, Container, Row} from "react-bootstrap";
-import {HomeSearch} from "../components/HomeSearch.jsx";
-import {FeaturesSection} from "../components/FeaturesSection.jsx";
-import {AnimatedSection} from "../components/AnimatedSection.jsx";
-import {HotelCarrouselSection} from "../components/HotelCarrouselSection.jsx";
+import {Button, Col, Container, FloatingLabel, Form, Row} from "react-bootstrap";
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {t} from "i18next";
@@ -13,6 +9,7 @@ import { faSpa, faPersonSwimming, faUtensils, faMusic, faDumbbell, faWifi, faBab
 export function Hotel() {
     const { hotelName } = useParams();
     const [hotel, setHotel] = useState(null);
+    const [selectedRating, setSelectedRating] = useState();
     const Icons = {
         "Spa y masajes": faSpa,
         "Piscina": faPersonSwimming,
@@ -37,6 +34,12 @@ export function Hotel() {
             })
             .catch(error => console.error("Error cargando hoteles:", error));
     }, [hotelName]);
+
+    useEffect(() => {
+        if(hotel){
+            console.log(hotel.review.length)
+        }
+    }, [hotel]);
 
     return (
         <>
@@ -131,7 +134,7 @@ export function Hotel() {
                             <h2 className="fw-semibold">Descripción</h2>
                             <p>{hotel.description}</p>
                         </Row>
-                        <Row>
+                        <Row className="mb-5">
                             <h2 className="fw-semibold mb-3">Acerca de este alojamiento</h2>
                             {
                                 hotel.amenityFeature.map((feature, _) => {
@@ -144,6 +147,60 @@ export function Hotel() {
                                 })
                             }
                         </Row>
+                        <Row className="mb-3">
+                            <h2 className="fw-semibold mb-4">Comentarios</h2>
+                            <Row className="d-flex justify-content-around">
+                                {
+                                    [...Array(11)].map((_, index) => (
+                                        <Col xs={2} md={1}>
+                                            <Button
+                                                className={`px-3 mb-3 btn-rating ${selectedRating === index ? "btn-rating-selected" : ""}`}
+                                                onClick={() => setSelectedRating(selectedRating === index ? null : index)}
+                                            >
+                                                {index}
+                                            </Button>
+                                        </Col>
+                                    ))
+                                }
+                            </Row>
+                        </Row>
+                        <Row>
+                            <Form.Control
+                                as="textarea"
+                                placeholder="Comentario"
+                                className="p-3"
+                                style={{ height: '100px', borderColor: "#252525" }}
+                            />
+                        </Row>
+                        <Row className="d-flex justify-content-end mt-3 mb-5">
+                            <Col className="d-flex justify-content-end p-0">
+                                <Button className="me-3 btn-outline">
+                                    Cancelar
+                                </Button>
+                                <Button className="">
+                                    Enviar
+                                </Button>
+                            </Col>
+                        </Row>
+                        {
+                            hotel.review.length === 0 &&
+                            <p className="text-light p-3 bg-dark rounded-4">Este hotel no tiene comentarios todavía</p>
+                        }
+                        {
+                            [...Array(hotel.review.length)].map((_, index) => (
+                                <Row className="border-1 p-3 pb-4 rounded-3" style={{borderColor: "#252525", borderStyle: "solid"}}>
+                                    <div className="d-flex align-items-center mb-3">
+                                        <span
+                                            className="me-3 py-2 px-3 bg-info rounded-5 ">{hotel.review[index].author.name[0]}</span>
+                                        <p className="m-0">{hotel.review[index].author.name}</p>
+                                    </div>
+                                    <p>{hotel.review[index].reviewBody}</p>
+                                    <div>
+                                        <span className="me-3 py-2 px-3 bg-success rounded-3 text-light">{hotel.review[index].reviewRating.ratingValue}</span>
+                                    </div>
+                                </Row>
+                            ))
+                        }
                     </Container>
                 </>
             }
