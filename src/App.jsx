@@ -4,19 +4,23 @@ import {Home} from "./pages/Home.jsx";
 import { useTranslation } from 'react-i18next';
 import {CustomFooter} from "./components/CustomFooter.jsx";
 import {Hotel} from "./pages/Hotel.jsx";
-import {useEffect, useState} from "react";
+import {createContext, useContext, useEffect, useState} from "react";
+import {HotelSearch} from "./pages/HotelSearch.jsx";
+import {HotelsProvider, useHotels} from "./context/HotelContext.jsx";
 
 function App() {
-
     const { t, i18n } = useTranslation();
-    const [hotels, setHotels] = useState([]);
 
-    useEffect(() => {
-        fetch("/hotels.json")
-            .then(res => res.json())
-            .then(data => setHotels(data))
-            .catch((error) => console.error("Error cargando hoteles:", error));
-    }, []);
+    return (
+        <HotelsProvider>
+            <AppContent t={t} i18n={i18n} />
+        </HotelsProvider>
+    );
+}
+
+
+function AppContent({ t, i18n }) {
+    const { hotels } = useHotels();
 
     const router = createBrowserRouter([
         {
@@ -26,21 +30,28 @@ function App() {
         {
             path: "/hotel/:hotelName",
             element: <Hotel />,
-        }
+        },
+        {
+            path: "/hoteles",
+            element: <HotelSearch />,
+        },
     ]);
 
     return (
-      <>
-          {
-              hotels.length > 0 &&
-              <>
-                  <CustomNavbar t={t} i18n={i18n}></CustomNavbar>
-                  <RouterProvider router={router} key={i18n.language}/>
-                  <CustomFooter></CustomFooter>
-              </>
-          }
-      </>
-    )
+        <>
+            {
+                hotels.length > 0 && (
+                    <>
+                        <CustomNavbar t={t} i18n={i18n} />
+                        <RouterProvider router={router} key={i18n.language} />
+                        <CustomFooter />
+                    </>
+                )
+            }
+        </>
+    );
 }
+
+
 
 export default App

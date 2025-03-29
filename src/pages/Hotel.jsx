@@ -5,11 +5,15 @@ import {t} from "i18next";
 import {MapComponent} from "../components/MapComponent.jsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faSpa, faPersonSwimming, faUtensils, faMusic, faDumbbell, faWifi, faBabyCarriage, faChampagneGlasses } from "@fortawesome/free-solid-svg-icons";
+import {useHotels} from "../context/HotelContext.jsx";
+import StarRating from "../components/StarRating.jsx";
+import {getRatingColor} from "../hooks/getRatingColor.js";
 
 export function Hotel() {
     const { hotelName } = useParams();
     const [hotel, setHotel] = useState(null);
     const [selectedRating, setSelectedRating] = useState();
+    const { hotels } = useHotels();
     const Icons = {
         "Spa y masajes": faSpa,
         "Piscina": faPersonSwimming,
@@ -20,26 +24,14 @@ export function Hotel() {
         "Club infantil": faBabyCarriage,
         "Discoteca": faChampagneGlasses
     };
-
     //Las fotos hay que ponerlas dentro de un "figure", deben ser webp y con jpg de soporte
     //Quitar los strings de value de amenityFeatures (ponerlos como booleanos)
     //Usar JSON-LD para web semántica
 
     useEffect(() => {
-        fetch("/hotels.json")
-            .then(response => response.json())
-            .then(data => {
-                const foundHotel = data.find(h => h.name.toLowerCase() === hotelName.toLowerCase());
-                setHotel(foundHotel);
-            })
-            .catch(error => console.error("Error cargando hoteles:", error));
+        const foundHotel = hotels.find(h => h.name.toLowerCase() === hotelName.toLowerCase());
+        setHotel(foundHotel);
     }, [hotelName]);
-
-    useEffect(() => {
-        if(hotel){
-            console.log(hotel.review.length)
-        }
-    }, [hotel]);
 
     return (
         <>
@@ -89,14 +81,7 @@ export function Hotel() {
                         <Row className="mb-5">
                             <Col md={8} className="d-flex justify-content-center flex-column">
                                 <Row className="mb-5">
-                                    {
-                                        [...Array(parseInt(hotel.starRating.bestRating))].map((_, index) => (
-                                            <i key={index}
-                                               className={`bi bi-star-fill fs-3 ${parseInt(hotel.starRating.ratingValue) > index ? "text-warning" : "text-black-50"}`}
-                                               style={{width: "50px"}}>
-                                            </i>
-                                        ))
-                                    }
+                                    <StarRating bestRating={parseInt(hotel.starRating.bestRating)} ratingValue={parseInt(hotel.starRating.ratingValue)}></StarRating>
                                 </Row>
                                 <Row>
                                     <Col className="text-white">
@@ -108,7 +93,9 @@ export function Hotel() {
                                     <Col>
                                         <Row>
                                             <Col md={4}>
-                                                <p className="fw-bold text-white bg-success my-0 p-3 fs-3 rounded-4 text-center w-100">
+                                                <p className="fw-bold text-white my-0 p-3 fs-3 rounded-4 text-center w-100"
+                                                   style={{backgroundColor: getRatingColor(9,1)}}
+                                                >
                                                     9,1
                                                 </p>
                                             </Col>
@@ -126,7 +113,7 @@ export function Hotel() {
                             </Col>
                             <Col md={4}>
                                 <div className="rounded-4 overflow-hidden">
-                                    <MapComponent latitude={hotel.geo.latitude} longitude={hotel.geo.longitude}></MapComponent>
+                                    <MapComponent latitude={[hotel.geo.latitude]} longitude={[hotel.geo.longitude]}></MapComponent>
                                 </div>
                             </Col>
                         </Row>
@@ -196,7 +183,11 @@ export function Hotel() {
                                     </div>
                                     <p>{hotel.review[index].reviewBody}</p>
                                     <div>
-                                        <span className="me-3 py-2 px-3 bg-success rounded-3 text-light">{hotel.review[index].reviewRating.ratingValue}</span>
+                                        <span className="me-3 py-2 px-3 rounded-3 text-light"
+                                              style={{backgroundColor: getRatingColor(9,1)}}
+                                        >
+                                            {hotel.review[index].reviewRating.ratingValue}
+                                        </span>
                                     </div>
                                 </Row>
                             ))

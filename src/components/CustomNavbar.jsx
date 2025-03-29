@@ -1,7 +1,6 @@
 import React from 'react';
 import {Button, Container, Nav, Navbar, Row} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import getUnicodeFlagIcon from 'country-flag-icons/unicode'
 
 export function CustomNavbar({t, i18n}) {
 
