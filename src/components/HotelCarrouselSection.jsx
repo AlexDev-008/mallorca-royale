@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {Col, Row} from "react-bootstrap";
 import {HotelCarrouselCard} from "./HotelCarrouselCard.jsx";
-import {EffectCoverflow} from "swiper/modules";
 import {Swiper,SwiperSlide} from "swiper/react";
 import 'swiper/css';
 import {t} from "i18next";
@@ -17,7 +16,7 @@ export function HotelCarrouselSection({hotels}) {
                         effect={"coverflow"}
                         grabCursor={true}
                         centeredSlides={true}
-                        slidesPerView={3}
+                        slidesPerView={(window.innerWidth > 1300) ? 3 : 1}
                         loop={true}
                         coverflowEffect={{
                             rotate: 0,

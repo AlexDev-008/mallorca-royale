@@ -8,12 +8,14 @@ import { faSpa, faPersonSwimming, faUtensils, faMusic, faDumbbell, faWifi, faBab
 import {useHotels} from "../context/HotelContext.jsx";
 import StarRating from "../components/StarRating.jsx";
 import {getRatingColor} from "../hooks/getRatingColor.js";
+import {getWeather} from "../hooks/getWeather.js";
 
 export function Hotel() {
     const { hotelName } = useParams();
     const [hotel, setHotel] = useState(null);
     const [selectedRating, setSelectedRating] = useState();
     const { hotels } = useHotels();
+    const [weather, setWeather] = useState();
     const Icons = {
         "Spa y masajes": faSpa,
         "Piscina": faPersonSwimming,
@@ -24,6 +26,7 @@ export function Hotel() {
         "Club infantil": faBabyCarriage,
         "Discoteca": faChampagneGlasses
     };
+
     //Las fotos hay que ponerlas dentro de un "figure", deben ser webp y con jpg de soporte
     //Quitar los strings de value de amenityFeatures (ponerlos como booleanos)
     //Usar JSON-LD para web semántica
@@ -32,6 +35,16 @@ export function Hotel() {
         const foundHotel = hotels.find(h => h.name.toLowerCase() === hotelName.toLowerCase());
         setHotel(foundHotel);
     }, [hotelName]);
+
+    useEffect(() => {
+        if(hotel){
+            getWeather(hotel.geo.latitude, hotel.geo.longitude)
+                .then(weather => {
+                    console.log(weather)
+                    setWeather(weather);
+                });
+        }
+    }, [hotel]);
 
     return (
         <>
@@ -80,8 +93,19 @@ export function Hotel() {
                         </Row>
                         <Row className="mb-5">
                             <Col md={8} className="d-flex justify-content-center flex-column">
-                                <Row className="mb-5">
-                                    <StarRating bestRating={parseInt(hotel.starRating.bestRating)} ratingValue={parseInt(hotel.starRating.ratingValue)}></StarRating>
+                                <Row className="mb-5 d-flex justify-content-between align-items-center">
+                                    <Col>
+                                        <StarRating bestRating={parseInt(hotel.starRating.bestRating)} ratingValue={parseInt(hotel.starRating.ratingValue)}></StarRating>
+                                    </Col>
+                                    {
+                                        weather &&
+                                        <Col className="d-flex justify-content-center align-items-center">
+                                            <div className="d-flex px-5 border border-3 rounded-4 justify-content-center align-items-center">
+                                                <p className="mb-0 me-3">{weather.current.temp_c} ºC</p>
+                                                <img src={`${weather.current.condition.icon}`} alt=""/>
+                                            </div>
+                                        </Col>
+                                    }
                                 </Row>
                                 <Row>
                                     <Col className="text-white">
@@ -113,7 +137,7 @@ export function Hotel() {
                             </Col>
                             <Col md={4}>
                                 <div className="rounded-4 overflow-hidden">
-                                    <MapComponent latitude={[hotel.geo.latitude]} longitude={[hotel.geo.longitude]}></MapComponent>
+                                    <MapComponent latitude={[hotel.geo.latitude]} longitude={[hotel.geo.longitude]} hotelNames={[hotel.name]}></MapComponent>
                                 </div>
                             </Col>
                         </Row>
