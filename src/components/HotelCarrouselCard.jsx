@@ -7,7 +7,7 @@ export function HotelCarrouselCard({hotelName, city, street, price}) {
     return (
         <>
             <div className="rounded-4 overflow-hidden primary mx-3">
-                <img src="src/assets/img/homeBackground.jpg" alt="" className="w-100"/>
+                <img src="/homeBackground.jpg" alt="" className="w-100"/>
                 <div className="text-light p-4 px-5 text-start">
                     <p>{city}</p>
                     <h3>{hotelName}</h3>

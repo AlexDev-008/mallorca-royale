@@ -37,10 +37,10 @@ export function HomeSearch({hotels}) {
     return (
         <>
             <Row className="home-background d-flex flex-column align-items-center gx-0" style={{padding: '15rem 0'}}>
-                <Col lg={4} className="text-center pb-5">
+                <Col lg={4} xs={10} className="text-center pb-5">
                     <h1 className="fw-bold text-light fs-1">{t("home.homePhrase")}</h1>
                 </Col>
-                <Col lg={3} className="position-relative">
+                <Col lg={4} xs={10} className="position-relative">
                     <Form>
                         <InputGroup>
                             <Form.Control
