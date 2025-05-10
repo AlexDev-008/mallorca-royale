@@ -3,13 +3,10 @@ import {Button, Col, Container, FloatingLabel, InputGroup, Row} from "react-boot
 import {MapComponent} from "../components/MapComponent.jsx";
 import Form from 'react-bootstrap/Form';
 import {t} from "i18next";
-import {Link} from "react-router-dom";
 import {useHotels} from "../context/HotelContext.jsx";
-import {HotelCarrouselCard} from "../components/HotelCarrouselCard.jsx";
 import {HotelCard} from "../components/HotelCard.jsx";
-import MultiRangeSlider from "../components/MultiRangeSlider.jsx";
-import {useExchangeRates} from "../hooks/getRates.js";
-import {useExchangeRate} from "../hooks/getExchangeRate.js";
+import {getRates} from "../hooks/getRates.js";
+import {getExchangeRate} from "../hooks/getExchangeRate.js";
 import {currencySymbols} from "../hooks/currencySymbols.js";
 import useMediaQuery from "../hooks/useMediaQuery.js";
 import { Pagination } from 'react-bootstrap';
@@ -24,7 +21,7 @@ export function HotelSearch() {
     const [lowPrice, setLowPrice] = useState();
     const [highPrice, setHighPrice] = useState();
     const [priceOrder, setPriceOrder] = useState("up");
-    const { rates, error } = useExchangeRates();
+    const [rates, setRates] = useState([]);
     const [currentRate, setCurrentRate] = useState("EUR");
     const [convertedPrices, setConvertedPrices] = useState([]);
     const isMediumScreen = useMediaQuery("(max-width: 1200px)");
@@ -38,7 +35,17 @@ export function HotelSearch() {
     const totalPages = Math.ceil(hotels.length / resultsPerPage);
 
     useEffect(() => {
+        const fetchRates = () => {
+            const { rates, error } = getRates();
+            if (rates) {
+                setRates(rates);
+            } else {
+                console.error(error);
+            }
+        };
+
         setAllHotels(hotels);
+        fetchRates();
     }, []);
 
     useEffect(() => {
@@ -94,6 +101,7 @@ export function HotelSearch() {
 
     const handleRateChange = (e) => {
         setCurrentRate(e.target.value);
+        console.log(getExchangeRate("EUR", e.target.value))
     }
 
     const handlePriceRangeChange = (price) => {

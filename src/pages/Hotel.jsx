@@ -1,10 +1,10 @@
 import {Button, Col, Container, FloatingLabel, Form, Row} from "react-bootstrap";
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import {t} from "i18next";
+import i18n, {t} from "i18next";
 import {MapComponent} from "../components/MapComponent.jsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { faSpa, faPersonSwimming, faUtensils, faMusic, faDumbbell, faWifi, faBabyCarriage, faChampagneGlasses } from "@fortawesome/free-solid-svg-icons";
+import { faSpa, faPersonSwimming, faUtensils, faMusic, faDumbbell, faWifi, faBabyCarriage, faChampagneGlasses, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import {useHotels} from "../context/HotelContext.jsx";
 import StarRating from "../components/StarRating.jsx";
 import {getRatingColor} from "../hooks/getRatingColor.js";
@@ -46,6 +46,16 @@ export function Hotel() {
         }
     }, [hotel]);
 
+    const speakText = (text) => {
+        if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = i18n.language;
+            speechSynthesis.speak(utterance);
+        } else {
+            alert('Tu navegador no soporta la síntesis de voz.');
+        }
+    };
+
     return (
         <>
             {
@@ -59,10 +69,12 @@ export function Hotel() {
                                 {hotel.address.streetAddress}
                             </p>
                         </Row>
-                        <Row className="align-items-stretch mb-5">
-                            <Col md={7} className="d-flex">
+                        <Row className="align-items-stretch">
+                            <Col md={7} className="d-flex mb-5">
                                 <div
-                                    className="w-100 text-white d-flex align-items-center justify-content-center rounded-4 overflow-hidden">
+                                    className="w-100 text-white d-flex align-items-center justify-content-center rounded-4 overflow-hidden"
+                                    style={{minHeight: "300px"}}
+                                >
                                     <iframe
                                         width="100%"
                                         height="100%"
@@ -73,7 +85,7 @@ export function Hotel() {
                                     ></iframe>
                                 </div>
                             </Col>
-                            <Col md={5}>
+                            <Col md={5} className="mb-5">
                                 <Row>
                                     <Col className="d-flex">
                                         <div
@@ -142,7 +154,15 @@ export function Hotel() {
                             </Col>
                         </Row>
                         <Row className="mb-5">
-                            <h2 className="fw-semibold">Descripción</h2>
+                            <div className="d-flex align-items-center">
+                                <h2 className="fw-semibold d-inline-block">Descripción</h2>
+                                <Button
+                                    className="bg-transparent border-0"
+                                    onClick={() => speakText(hotel.description)}
+                                >
+                                    <FontAwesomeIcon icon={faVolumeHigh} color={"black"} size={"xl"}/>
+                                </Button>
+                            </div>
                             <p>{hotel.description}</p>
                         </Row>
                         <Row className="mb-5">

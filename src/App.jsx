@@ -7,6 +7,7 @@ import {Hotel} from "./pages/Hotel.jsx";
 import {createContext, useContext, useEffect, useState} from "react";
 import {HotelSearch} from "./pages/HotelSearch.jsx";
 import {HotelsProvider, useHotels} from "./context/HotelContext.jsx";
+import {AboutUs} from "./pages/AboutUs.jsx";
 
 function App() {
     const { t, i18n } = useTranslation();
@@ -34,6 +35,10 @@ function AppContent({ t, i18n }) {
         {
             path: "/hoteles",
             element: <HotelSearch />,
+        },
+        {
+            path: "/sobre-nosotros",
+            element: <AboutUs />,
         },
     ]);
 
