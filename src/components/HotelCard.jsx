@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Col, Row} from "react-bootstrap";
 import StarRating from "./StarRating.jsx";
 import {t} from "i18next";
@@ -6,14 +6,18 @@ import {getRatingColor} from "../hooks/getRatingColor.js";
 import {Link} from "react-router-dom";
 import useMediaQuery from "../hooks/useMediaQuery.js";
 
-export function HotelCard({hotelName, city, street, price, bestStars, stars, userRating, reviews}) {
+export function HotelCard({hotelName, city, street, price, bestStars, stars, userRating, reviews, image}) {
     const isSmallScreen = useMediaQuery('(max-width: 730px)');
 
     return (
         <>
             <Row className="rounded-4 overflow-hidden primary mx-2 my-3 p-0">
-                <Col md={3} className="p-0">
-                    <img src="/homeBackground.jpg" alt="" className="w-100 h-100 object-cover"/>
+                <Col md={3} className="p-0 d-flex">
+                    <img
+                        src={image}
+                        alt={`Imagen del hotel ${hotelName}`}
+                        className="w-100 h-100 object-fit-cover"
+                    />
                 </Col>
                 <Col md={9} className="p-4">
                     <h2 className="text-white fw-bold fs-3">{hotelName}</h2>

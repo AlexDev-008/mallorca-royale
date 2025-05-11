@@ -67,7 +67,9 @@ export function HotelCarrouselSection({hotels}) {
                                             hotelName={hotels[index].name}
                                             city={hotels[index].address.addressLocality}
                                             street={hotels[index].address.streetAddress}
-                                            price={hotels[index].priceRange}>
+                                            price={hotels[index].priceRange}
+                                            image={hotels[index].image[0]}
+                                        >
                                         </HotelCarrouselCard>
                                     </SwiperSlide>
                                 ))

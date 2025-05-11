@@ -216,7 +216,8 @@ export function HotelSearch() {
                                             bestStars={parseInt(hotel.starRating.bestRating)}
                                             stars={parseInt(hotel.starRating.ratingValue)}
                                             userRating={0}
-                                            reviews={hotel.review}
+                                            image={hotel.image[0]}
+                                            reviews={[]}    //Leer del JSON de reseñas
                                         />
                                     </Col>
                                 )) :

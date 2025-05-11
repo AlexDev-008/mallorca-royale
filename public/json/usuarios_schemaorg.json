@@ -1,0 +1,128 @@
+[
+  {
+    "@type": "Person",
+    "name": "Usuario 1",
+    "email": "usuario1@ejemplo.com",
+    "identifier": "u001",
+    "password": "claveSegura001"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 2",
+    "email": "usuario2@ejemplo.com",
+    "identifier": "u002",
+    "password": "claveSegura002"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 3",
+    "email": "usuario3@ejemplo.com",
+    "identifier": "u003",
+    "password": "claveSegura003"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 4",
+    "email": "usuario4@ejemplo.com",
+    "identifier": "u004",
+    "password": "claveSegura004"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 5",
+    "email": "usuario5@ejemplo.com",
+    "identifier": "u005",
+    "password": "claveSegura005"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 6",
+    "email": "usuario6@ejemplo.com",
+    "identifier": "u006",
+    "password": "claveSegura006"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 7",
+    "email": "usuario7@ejemplo.com",
+    "identifier": "u007",
+    "password": "claveSegura007"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 8",
+    "email": "usuario8@ejemplo.com",
+    "identifier": "u008",
+    "password": "claveSegura008"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 9",
+    "email": "usuario9@ejemplo.com",
+    "identifier": "u009",
+    "password": "claveSegura009"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 10",
+    "email": "usuario10@ejemplo.com",
+    "identifier": "u010",
+    "password": "claveSegura010"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 11",
+    "email": "usuario11@ejemplo.com",
+    "identifier": "u011",
+    "password": "claveSegura011"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 12",
+    "email": "usuario12@ejemplo.com",
+    "identifier": "u012",
+    "password": "claveSegura012"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 13",
+    "email": "usuario13@ejemplo.com",
+    "identifier": "u013",
+    "password": "claveSegura013"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 14",
+    "email": "usuario14@ejemplo.com",
+    "identifier": "u014",
+    "password": "claveSegura014"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 15",
+    "email": "usuario15@ejemplo.com",
+    "identifier": "u015",
+    "password": "claveSegura015"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 16",
+    "email": "usuario16@ejemplo.com",
+    "identifier": "u016",
+    "password": "claveSegura016"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 17",
+    "email": "usuario17@ejemplo.com",
+    "identifier": "u017",
+    "password": "claveSegura017"
+  },
+  {
+    "@type": "Person",
+    "name": "Usuario 18",
+    "email": "usuario18@ejemplo.com",
+    "identifier": "u018",
+    "password": "claveSegura018"
+  }
+]

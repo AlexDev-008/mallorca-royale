@@ -78,7 +78,7 @@ export function Hotel() {
                                     <iframe
                                         width="100%"
                                         height="100%"
-                                        src="https://www.youtube.com/embed/VGWw19FoDII"
+                                        src={hotel.subjectOf.contentUrl}
                                         title="YouTube video player"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
@@ -90,14 +90,15 @@ export function Hotel() {
                                     <Col className="d-flex">
                                         <div
                                             className="w-100 text-white d-flex align-items-center justify-content-center rounded-4 overflow-hidden">
-                                            <img src="/tmp/tmp1.jpg" alt="Imagen1" style={{ height: "350px"}}/>
+                                            <img src={hotel.image[0]} alt="Imagen 1" style={{height: "350px"}} className="rounded-4"/>
                                         </div>
                                     </Col>
                                 </Row>
                                 <Row className="mt-4">
                                     <Col className="d-flex">
-                                        <div className="w-100 text-white d-flex align-items-center justify-content-center rounded-4 overflow-hidden">
-                                            <img src="/tmp/tmp2.jpg" alt="Imagen2" style={{ height: "350px" }}/>
+                                        <div
+                                            className="w-100 text-white d-flex align-items-center justify-content-center rounded-4 overflow-hidden">
+                                            <img src={hotel.image[1]} alt="Imagen 2" style={{height: "350px"}} className="rounded-4"/>
                                         </div>
                                     </Col>
                                 </Row>
@@ -107,12 +108,14 @@ export function Hotel() {
                             <Col md={8} className="d-flex justify-content-center flex-column">
                                 <Row className="mb-5 d-flex justify-content-between align-items-center">
                                     <Col>
-                                        <StarRating bestRating={parseInt(hotel.starRating.bestRating)} ratingValue={parseInt(hotel.starRating.ratingValue)}></StarRating>
+                                        <StarRating bestRating={parseInt(hotel.starRating.bestRating)}
+                                                    ratingValue={parseInt(hotel.starRating.ratingValue)}></StarRating>
                                     </Col>
                                     {
                                         weather &&
                                         <Col className="d-flex justify-content-center align-items-center">
-                                            <div className="d-flex px-5 border border-3 rounded-4 justify-content-center align-items-center">
+                                            <div
+                                                className="d-flex px-5 border border-3 rounded-4 justify-content-center align-items-center">
                                                 <p className="mb-0 me-3">{weather.current.temp_c} ºC</p>
                                                 <img src={`${weather.current.condition.icon}`} alt=""/>
                                             </div>
@@ -130,7 +133,7 @@ export function Hotel() {
                                         <Row>
                                             <Col md={4}>
                                                 <p className="fw-bold text-white my-0 p-3 fs-3 rounded-4 text-center w-100"
-                                                   style={{backgroundColor: getRatingColor(9,1)}}
+                                                   style={{backgroundColor: getRatingColor(9, 1)}}
                                                 >
                                                     9,1
                                                 </p>
@@ -140,7 +143,8 @@ export function Hotel() {
                                                     <p className="fw-bold fs-3 mb-0">Excelente</p>
                                                 </Row>
                                                 <Row>
-                                                    <p>{hotel.review.length} {`${hotel.review.length === 1 ? "comentario" : "comentarios"}`}</p>
+                                                    <p>0 comentarios</p>
+                                                    {/*<p>{hotel.review.length} {`${hotel.review.length === 1 ? "comentario" : "comentarios"}`}</p>*/}
                                                 </Row>
                                             </Col>
                                         </Row>
@@ -149,7 +153,8 @@ export function Hotel() {
                             </Col>
                             <Col md={4}>
                                 <div className="rounded-4 overflow-hidden">
-                                    <MapComponent latitude={[hotel.geo.latitude]} longitude={[hotel.geo.longitude]} hotelNames={[hotel.name]}></MapComponent>
+                                    <MapComponent latitude={[hotel.geo.latitude]} longitude={[hotel.geo.longitude]}
+                                                  hotelNames={[hotel.name]}></MapComponent>
                                 </div>
                             </Col>
                         </Row>
@@ -171,7 +176,7 @@ export function Hotel() {
                                 hotel.amenityFeature.map((feature, _) => {
                                     return feature.value ? (
                                         <Col md={4} className="d-flex flex-row align-content-center">
-                                            <FontAwesomeIcon icon={Icons[feature.name]} className="mt-1" />
+                                            <FontAwesomeIcon icon={Icons[feature.name]} className="mt-1"/>
                                             <p className="ms-3">{feature.name}</p>
                                         </Col>
                                     ) : null
@@ -200,7 +205,7 @@ export function Hotel() {
                                 as="textarea"
                                 placeholder="Comentario"
                                 className="p-3"
-                                style={{ height: '100px', borderColor: "#252525" }}
+                                style={{height: '100px', borderColor: "#252525"}}
                             />
                         </Row>
                         <Row className="d-flex justify-content-end mt-3 mb-5">
@@ -213,29 +218,31 @@ export function Hotel() {
                                 </Button>
                             </Col>
                         </Row>
-                        {
-                            hotel.review.length === 0 &&
-                            <p className="text-light p-3 bg-dark rounded-4">Este hotel no tiene comentarios todavía</p>
-                        }
-                        {
-                            [...Array(hotel.review.length)].map((_, index) => (
-                                <Row className="border-1 p-3 pb-4 rounded-3" style={{borderColor: "#252525", borderStyle: "solid"}}>
-                                    <div className="d-flex align-items-center mb-3">
-                                        <span
-                                            className="me-3 py-2 px-3 bg-info rounded-5 ">{hotel.review[index].author.name[0]}</span>
-                                        <p className="m-0">{hotel.review[index].author.name}</p>
-                                    </div>
-                                    <p>{hotel.review[index].reviewBody}</p>
-                                    <div>
-                                        <span className="me-3 py-2 px-3 rounded-3 text-light"
-                                              style={{backgroundColor: getRatingColor(9,1)}}
-                                        >
-                                            {hotel.review[index].reviewRating.ratingValue}
-                                        </span>
-                                    </div>
-                                </Row>
-                            ))
-                        }
+                        <p className="text-light p-3 bg-dark rounded-4">Este hotel no tiene comentarios todavía</p>
+                        {/*{*/}
+                        {/*    hotel.review.length === 0 &&*/}
+                        {/*    <p className="text-light p-3 bg-dark rounded-4">Este hotel no tiene comentarios todavía</p>*/}
+                        {/*}*/}
+                        {/*{*/}
+                        {/*    [...Array(hotel.review.length)].map((_, index) => (*/}
+                        {/*        <Row className="border-1 p-3 pb-4 rounded-3"*/}
+                        {/*             style={{borderColor: "#252525", borderStyle: "solid"}}>*/}
+                        {/*            <div className="d-flex align-items-center mb-3">*/}
+                        {/*                <span*/}
+                        {/*                    className="me-3 py-2 px-3 bg-info rounded-5 ">{hotel.review[index].author.name[0]}</span>*/}
+                        {/*                <p className="m-0">{hotel.review[index].author.name}</p>*/}
+                        {/*            </div>*/}
+                        {/*            <p>{hotel.review[index].reviewBody}</p>*/}
+                        {/*            <div>*/}
+                        {/*                <span className="me-3 py-2 px-3 rounded-3 text-light"*/}
+                        {/*                      style={{backgroundColor: getRatingColor(9, 1)}}*/}
+                        {/*                >*/}
+                        {/*                    {hotel.review[index].reviewRating.ratingValue}*/}
+                        {/*                </span>*/}
+                        {/*            </div>*/}
+                        {/*        </Row>*/}
+                        {/*    ))*/}
+                        {/*}*/}
                     </Container>
                 </>
             }

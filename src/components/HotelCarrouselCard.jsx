@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {t} from "i18next";
 
-export function HotelCarrouselCard({hotelName, city, street, price}) {
+export function HotelCarrouselCard({hotelName, city, street, price, image}) {
+
     return (
         <>
             <div className="rounded-4 overflow-hidden primary mx-3">
-                <img src="/homeBackground.jpg" alt="" className="w-100"/>
+                <img
+                    src={image}
+                    alt={`Imagen del hotel ${hotelName}`}
+                    className="w-100"
+                />
                 <div className="text-light p-4 px-5 text-start">
                     <p>{city}</p>
                     <h3>{hotelName}</h3>
