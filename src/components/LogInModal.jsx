@@ -3,11 +3,12 @@ import Form from "react-bootstrap/Form";
 import {useEffect, useState} from "react";
 import {getUsers} from "../services/services.js";
 
-export function LogInModal({showModal, setShowModal, setLoggedIn}) {
+export function LogInModal({showModal, setShowModal}) {
     const [logIn, setLogIn] = useState(true);
     const [username, setUsername] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [error, setError] = useState("");
 
     const checkLogIn = async () => {
         const users = await getUsers();
@@ -16,9 +17,10 @@ export function LogInModal({showModal, setShowModal, setLoggedIn}) {
             if(user.email === email && user.password === password){
                 localStorage.setItem("username", user.name);
                 localStorage.setItem("profileColor", "#" + Math.floor(Math.random()*16777215).toString(16));
-                setLoggedIn(true);
                 setShowModal(false);
                 break;
+            } else {
+                setError("Correo o contraseña incorrectos");
             }
         }
     }
@@ -53,13 +55,26 @@ export function LogInModal({showModal, setShowModal, setLoggedIn}) {
                             <Form.Label>
                                 Email
                             </Form.Label>
-                            <Form.Control type="email" onChange={(e) => setEmail(e.target.value)}/>
+                            <Form.Control
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                isInvalid={!!error}
+                            />
+                            <Form.Control.Feedback type="invalid">
+                                {error}
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="password">
                             <Form.Label>
                                 Contraseña
                             </Form.Label>
-                            <Form.Control type="password" onChange={(e) => setPassword(e.target.value)}/>
+                            <Form.Control
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                isInvalid={!!error}
+                            />
                         </Form.Group>
                         <Button className="mt-3" onClick={() => {logIn ? checkLogIn() : null}}>
                             {

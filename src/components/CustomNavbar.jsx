@@ -9,8 +9,9 @@ export function CustomNavbar({t, i18n}) {
 
     const [isMobile, setIsMobile] = useState(false);
     const [showLogInModal, setShowLogInModal] = useState(false);
-    const [loggedIn, setLoggedIn] = useState(false);
     const [showLogOutMenu, setShowLogOutMenu] = useState(false);
+    const loggedIn = !!localStorage.getItem("username");
+    const [_, forceUpdate] = useState(false);
 
     const handleChangeLanguage = (event) => {
         i18n.changeLanguage(event.target.value);
@@ -35,7 +36,6 @@ export function CustomNavbar({t, i18n}) {
                 <LogInModal
                     showModal={showLogInModal}
                     setShowModal={setShowLogInModal}
-                    setLoggedIn={setLoggedIn}
                 ></LogInModal>
             }
             <Navbar expand="lg" className="primary" variant="dark">
@@ -104,9 +104,9 @@ export function CustomNavbar({t, i18n}) {
                                                     className="btn btn-sm btn-danger w-100"
                                                     onClick={(e) => {
                                                         e.stopPropagation();
-                                                        setLoggedIn(false);
                                                         localStorage.removeItem("username");
                                                         localStorage.removeItem("profileColor");
+                                                        forceUpdate((prevState) => !prevState);
                                                     }}
                                                 >
                                                     Log out

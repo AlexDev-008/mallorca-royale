@@ -9,6 +9,8 @@ import {useHotels} from "../context/HotelContext.jsx";
 import StarRating from "../components/StarRating.jsx";
 import {getRatingColor} from "../hooks/getRatingColor.js";
 import {getWeather} from "../hooks/getWeather.js";
+import {getRestaurants} from "../services/services.js";
+import {RestaurantCardCarousel} from '../components/RestaurantCardCarousel';
 
 export function Hotel() {
     const { hotelName } = useParams();
@@ -16,6 +18,7 @@ export function Hotel() {
     const [selectedRating, setSelectedRating] = useState();
     const { hotels } = useHotels();
     const [weather, setWeather] = useState();
+    const [restaurants, setRestaurants] = useState();
     const Icons = {
         "Spa y masajes": faSpa,
         "Piscina": faPersonSwimming,
@@ -27,9 +30,41 @@ export function Hotel() {
         "Discoteca": faChampagneGlasses
     };
 
-    //Las fotos hay que ponerlas dentro de un "figure", deben ser webp y con jpg de soporte
-    //Quitar los strings de value de amenityFeatures (ponerlos como booleanos)
-    //Usar JSON-LD para web semántica
+    function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+        const R = 6371;
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+        const a =
+            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) *
+            Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return R * c;
+    }
+
+    useEffect(() => {
+        if(hotel){
+            const getNearbyRestaurants = async () => {
+                let fetchedRestaurants = await getRestaurants();
+
+                setRestaurants(
+                    fetchedRestaurants.itemListElement.filter(entry => {
+                        const { latitude, longitude } = entry.item.geo;
+                        const distance = getDistanceFromLatLonInKm(
+                            parseFloat(latitude),
+                            parseFloat(longitude),
+                            parseFloat(hotel.geo.latitude),
+                            parseFloat(hotel.geo.longitude)
+                        );
+                        return distance <= 10;
+                    })
+                );
+            }
+
+            getNearbyRestaurants();
+        }
+    }, [hotel]);
 
     useEffect(() => {
         const foundHotel = hotels.find(h => h.name.toLowerCase() === hotelName.toLowerCase());
@@ -40,7 +75,6 @@ export function Hotel() {
         if(hotel){
             getWeather(hotel.geo.latitude, hotel.geo.longitude)
                 .then(weather => {
-                    console.log(weather)
                     setWeather(weather);
                 });
         }
@@ -182,6 +216,10 @@ export function Hotel() {
                                     ) : null
                                 })
                             }
+                        </Row>
+                        <Row className="mb-5">
+                            <h2 className="fw-semibold mb-4">Restaurantes con estrella Michelin a 10km a la redonda</h2>
+                            <RestaurantCardCarousel restaurants={restaurants} />
                         </Row>
                         <Row className="mb-3">
                             <h2 className="fw-semibold mb-4">Comentarios</h2>

@@ -119,3 +119,27 @@ body{
   background-color: #252525 !important;
   color: white !important;
 }
+
+.carousel-wrapper {
+  position: relative;
+  padding: 0 40px;
+}
+
+.carousel-wrapper .carousel-control-prev,
+.carousel-wrapper .carousel-control-next {
+  width: 40px;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  transform: none;
+  opacity: 1;
+  filter: invert(1);
+}
+
+.carousel-wrapper .carousel-control-prev {
+  left: -40px;
+}
+
+.carousel-wrapper .carousel-control-next {
+  right: -40px;
+}
