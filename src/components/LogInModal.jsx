@@ -2,6 +2,7 @@ import {Button, InputGroup, Modal} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import {useEffect, useState} from "react";
 import {getUsers} from "../services/services.js";
+import {t} from "i18next";
 
 export function LogInModal({showModal, setShowModal}) {
     const [logIn, setLogIn] = useState(true);
@@ -25,8 +26,38 @@ export function LogInModal({showModal, setShowModal}) {
         }
     }
 
-    const signUp = () => {
+    const signUp = async () => {
+        if (!username || !email || !password) {
+            setError("Rellena todos los campos");
+            return;
+        }
 
+        try {
+            const response = await fetch("http://localhost:8080/signup.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: username,
+                    email,
+                    password
+                })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                localStorage.setItem("username", username);
+                localStorage.setItem("profileColor", "#" + Math.floor(Math.random()*16777215).toString(16));
+                setShowModal(false);
+            } else {
+                setError(data.error || "Error al registrar");
+            }
+        } catch (err) {
+            console.error(err);
+            setError("Error de red o del servidor");
+        }
     }
 
     return (
@@ -35,9 +66,9 @@ export function LogInModal({showModal, setShowModal}) {
                 <Modal.Header closeButton className="primary text-light rounded-1">
                     <Modal.Title>{
                         logIn ?
-                            "Log In"
+                            t("general.logIn")
                             :
-                            "Registro"
+                            t("general.signUp")
                     }</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="d-flex flex-column justify-content-center">
@@ -46,9 +77,14 @@ export function LogInModal({showModal, setShowModal}) {
                             !logIn &&
                             <Form.Group className="mb-3" controlId="username">
                                 <Form.Label>
-                                    Nombre usuario
+                                    {t("general.username")}
                                 </Form.Label>
-                                <Form.Control type="text" onChange={(e) => setUsername(e.target.value)}/>
+                                <Form.Control
+                                    type="text"
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    isInvalid={!!error}
+                                />
                             </Form.Group>
                         }
                         <Form.Group className="mb-3" controlId="email">
@@ -67,7 +103,7 @@ export function LogInModal({showModal, setShowModal}) {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="password">
                             <Form.Label>
-                                Contraseña
+                                {t("general.password")}
                             </Form.Label>
                             <Form.Control
                                 type="password"
@@ -76,21 +112,21 @@ export function LogInModal({showModal, setShowModal}) {
                                 isInvalid={!!error}
                             />
                         </Form.Group>
-                        <Button className="mt-3" onClick={() => {logIn ? checkLogIn() : null}}>
+                        <Button className="mt-3" onClick={() => {logIn ? checkLogIn() : signUp()}}>
                             {
                                 logIn ?
-                               "Inciar sesión"
+                                    t("general.logIn")
                                     :
-                                "Registrar"
+                                    t("general.signUp")
                             }
                         </Button>
                     </Form>
                     <p className="bg-transparent border-0 text-black text-center">
                         {
                             logIn ?
-                            "¿No tienes cuenta?"
+                                t("general.noAccount")
                                 :
-                            "¿Ya tienes cuenta?"
+                                t("general.haveAccount")
                         }
                         <span
                             className="text-primary cursor"
@@ -99,9 +135,9 @@ export function LogInModal({showModal, setShowModal}) {
                         >
                             {
                                 logIn ?
-                                " Regístrate"
+                                    t("general.logIn")
                                     :
-                                " Inicia sesión"
+                                    t("general.signUp")
                             }
 
                         </span>

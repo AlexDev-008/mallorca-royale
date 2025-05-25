@@ -1,10 +1,20 @@
 
 const getUsers = async () => {
     try {
-        const res = await fetch("/json/users.json");
+        const res = await fetch("/users.json");
         return await res.json();
     } catch (error) {
         console.error("Error cargando usuarios:", error);
+        return [];
+    }
+}
+
+const getReviews = async () => {
+    try {
+        const res = await fetch("/reviews.json");
+        return await res.json();
+    } catch (error) {
+        console.error("Error cargando reviews:", error);
         return [];
     }
 }
@@ -19,4 +29,4 @@ const getRestaurants = async () => {
     }
 }
 
-export {getUsers, getRestaurants}
+export {getUsers, getReviews, getRestaurants}

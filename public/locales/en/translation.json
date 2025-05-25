@@ -1,24 +1,67 @@
 {
   "general": {
-    "logIn": "Log in",
-    "search": "Search"
+    "logIn": "Log In",
+    "signUp": "Sign Up",
+    "username": "Username",
+    "password": "Password",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "search": "Search",
+    "results": "results",
+    "view": "View",
+    "comment": "comment",
+    "comments": "comments",
+    "commentsTitle": "Comments",
+    "excellent": "Excellent",
+    "reallyGood": "Very good",
+    "good": "Good",
+    "bad": "Bad",
+    "reallyBad": "Very bad",
+    "noOpinions": "No reviews",
+    "send": "Send",
+    "cancel": "Cancel",
+    "noCommentsYet": "This hotel has no comments yet",
+    "viewWeb": "View website",
+    "footerText": "© 2025 Mallorca Royale, Inc., a Mallorca Royale Group company. All rights reserved. Mallorca Royale and the Mallorca Royale logo are trademarks or registered trademarks of Mallorca Royale, Inc. Vacationspot, S.L., Travel Agency, I-AV-0000631.3."
   },
   "navbar": {
     "hotels": "Hotels",
-    "aboutUs": "About us"
+    "aboutUs": "About Us"
   },
   "home": {
-    "homePhrase": "FIND YOUR PERFECT HOTEL",
+    "homePhrase": "FIND YOUR IDEAL HOTEL",
     "featureTitle1": "Search your hotel",
-    "featureDescription1": "Filter and search hotels based on your needs: location, services, price and more.",
-    "featureTitle2": "Opinions and ratings",
-    "featureDescription2": "Read reviews from other travelers and leave your own opinion to help others make the best decision.",
+    "featureDescription1": "Filter and search for hotels based on your needs: location, amenities, price, and more.",
+    "featureTitle2": "Reviews and Ratings",
+    "featureDescription2": "Read reviews from other travelers and leave your own to help others make the best decision.",
     "featureTitle3": "Prices in your currency",
-    "featureDescription3": "Consult prices of hotels in your local currency. No surprises in the price!",
-    "carrouselTitle": "Our best hotels",
-    "seeHotel":  "See hotel"
+    "featureDescription3": "Check hotel costs in your local currency. No price surprises!",
+    "carrouselTitle": "Our top hotels",
+    "seeHotel": "View hotel"
+  },
+  "hotelSearch": {
+    "noResults": "No results for the applied filters",
+    "hotelNameTitle": "Hotel name",
+    "selectCurrency": "Select currency",
+    "filterBy": "Filter by",
+    "price": "Price",
+    "applyFilter": "Apply filter",
+    "title": "Search your hotel",
+    "increasingPrice": "Price (ascending)",
+    "decreasingPrice": "Price (descending)",
+    "minimum": "Minimum",
+    "maximum": "Maximum",
+    "orderedBy": "Ordered by"
   },
   "hotel": {
-    "perNight": " / per night"
+    "perNight": " / per night",
+    "description": "Description",
+    "featuresTitle": "About this accommodation",
+    "restaurantsTitle": "Michelin-starred restaurants within 10km",
+    "commentsError": "You must log in to leave a comment"
+  },
+  "aboutUs": {
+    "aboutUs": "About Us",
+    "videoTitle": "Explanatory Video"
   }
 }

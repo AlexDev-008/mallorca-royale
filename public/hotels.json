@@ -25,31 +25,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/onapalmira/img1.webp",
-      "https://www.mallorcaroyale.com/images/onapalmira/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/onapalmira/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/onapalmira/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Explora el Ona Palmira Paradise Paguera",
       "description": "Descubre las instalaciones y servicios que ofrece el Ona Palmira Paradise Paguera en este recorrido virtual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/onapalmira_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/onapalmira_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/VGWw19FoDII"
     },
-    "review": [
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "María Gómez"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "10",
-          "bestRating": "10"
-        },
-        "reviewBody": "Un lugar mágico, perfecto para desconectar. El servicio es excepcional."
-      }
-    ],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": false },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": true },
@@ -88,17 +73,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/conventdelamissio/img1.webp",
-      "https://www.mallorcaroyale.com/images/conventdelamissio/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/conventdelamissio/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/conventdelamissio/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Descubre el Hotel Convent de la Missió",
       "description": "Sumérgete en la historia y el lujo del Hotel Convent de la Missió en este recorrido visual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/conventdelamissio_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/conventdelamissio_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/W3ENTWzekHM"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -130,24 +114,23 @@
       "longitude": 2.60770
     },
     "telephone": "+34 971 700 888",
-    "url": "https://www.hotelmallorcanixepalace.com/",
+    "url": "https://www.hotelmallorcanixepa lace.com/",
     "starRating": {
       "@type": "Rating",
       "ratingValue": "5",
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/nixepalace/img1.webp",
-      "https://www.mallorcaroyale.com/images/nixepalace/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/nixepalace/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/nixepalace/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Descubre el Hotel Nixe Palace",
       "description": "Explora las lujosas instalaciones del Hotel Nixe Palace en este recorrido visual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/nixepalace_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/nixepalace_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/3kfbpWUnJZM"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -186,17 +169,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/caprocat/img1.webp",
-      "https://www.mallorcaroyale.com/images/caprocat/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/caprocat/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/caprocat/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Explora el Hotel Cap Rocat",
       "description": "Sumérgete en el lujo y la historia del Hotel Cap Rocat en este recorrido visual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/caprocat_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/caprocat_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/T2JMbme-0WM"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": true },
@@ -235,17 +217,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/santfrancesc/img1.webp",
-      "https://www.mallorcaroyale.com/images/santfrancesc/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/santfrancesc/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/santfrancesc/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Descubre el Sant Francesc Hotel Singular",
       "description": "Explora la belleza y el encanto del Sant Francesc Hotel Singular en este recorrido visual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/santfrancesc_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/santfrancesc_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/tbe7OkmVDSE"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -284,17 +265,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/canalomar/img1.webp",
-      "https://www.mallorcaroyale.com/images/canalomar/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/canalomar/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/canalomar/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Explora el Hotel Can Alomar",
       "description": "Descubre la elegancia y el confort del Hotel Can Alomar en este recorrido visual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/canalomar_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/canalomar_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/PyuqXtEFAl4"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -326,24 +306,23 @@
       "longitude": 2.59632
     },
     "telephone": "+34 971 707 744",
-    "url": "https://www.hospes.com/maricel/",
+    "url": "https://www.hospes.com/maricel/", 
     "starRating": {
       "@type": "Rating",
       "ratingValue": "5",
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/maricel/img1.webp",
-      "https://www.mallorcaroyale.com/images/maricel/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/maricel/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/maricel/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Descubre el Hotel Hospes Maricel & Spa",
       "description": "Explora el lujo y la serenidad del Hotel Hospes Maricel & Spa en este recorrido visual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/maricel_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/maricel_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/p_TCBs_L3LM"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -375,24 +354,23 @@
       "longitude": 2.64919
     },
     "telephone": "+34 971 639 011",
-    "url": "https://www.belmond.com/la-residencia/",
+    "url": "https://www.belmond.com/es/hotels/europe/mallorca/deia/belmond-la-residencia/",
     "starRating": {
       "@type": "Rating",
       "ratingValue": "5",
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/laresidencia/img1.webp",
-      "https://www.mallorcaroyale.com/images/laresidencia/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/laresidencia/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/laresidencia/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Explora Belmond La Residencia",
       "description": "Conoce el lujo y la serenidad de Belmond La Residencia en este recorrido visual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/laresidencia_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/laresidencia_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/RC3qjH5UxsY"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "false" },
@@ -431,17 +409,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/fincaserena/img1.webp",
-      "https://www.mallorcaroyale.com/images/fincaserena/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/fincaserena/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/fincaserena/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Explora Finca Serena Mallorca",
       "description": "Sumérgete en la tranquilidad y la naturaleza en este recorrido visual por Finca Serena Mallorca.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/fincaserena_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/fincaserena_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/jc2zjo7Q_jw"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -480,17 +457,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/gloriasantjaume/img1.webp",
-      "https://www.mallorcaroyale.com/images/gloriasantjaume/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/gloriasantjaume/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/gloriasantjaume/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Explora el Hotel Gloria de Sant Jaume",
       "description": "Sumérgete en la elegancia del Hotel Gloria de Sant Jaume con este recorrido virtual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/gloriasantjaume_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/gloriasantjaume_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/ngu1HjX_ZAs"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -529,17 +505,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/canbordoy/img1.webp",
-      "https://www.mallorcaroyale.com/images/canbordoy/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/canbordoy/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/canbordoy/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Descubre Can Bordoy Grand House & Garden",
       "description": "Sumérgete en la elegancia y el encanto del Can Bordoy Grand House & Garden con este recorrido virtual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/canbordoy_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/canbordoy_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/T-AIApF9BWI"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -578,17 +553,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/sonbrull/img1.webp",
-      "https://www.mallorcaroyale.com/images/sonbrull/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/sonbrull/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/sonbrull/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Descubre el Hotel Son Brull",
       "description": "Explora el lujo y la tranquilidad de Son Brull Hotel & Spa en este recorrido virtual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/sonbrull_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/sonbrull_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/aWcDGVuQs8o"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -627,17 +601,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/cansimoneta/img1.webp",
-      "https://www.mallorcaroyale.com/images/cansimoneta/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/cansimoneta/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/cansimoneta/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Explora el Hotel Can Simoneta",
       "description": "Descubre el lujo y la tranquilidad del Hotel Can Simoneta en este recorrido visual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/cansimoneta_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/cansimoneta_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/VDh8IU7ZqAo"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -676,17 +649,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/elllorenc/img1.webp",
-      "https://www.mallorcaroyale.com/images/elllorenc/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/elllorenc/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/elllorenc/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Descubre Hotel El Llorenç Parc de la Mar",
       "description": "Explora el lujo y las vistas inigualables del Hotel El Llorenç Parc de la Mar.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/elllorenc_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/elllorenc_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/_p4gr2a8El8"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -725,17 +697,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/sheratonmallorca/img1.webp",
-      "https://www.mallorcaroyale.com/images/sheratonmallorca/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/sheratonmallorca/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/sheratonmallorca/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Descubre el Sheraton Mallorca Arabella Golf Hotel",
       "description": "Explora este exclusivo hotel de 5 estrellas con su impresionante entorno de golf y servicios de lujo.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/sheratonmallorca_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/sheratonmallorca_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/dZn3oFEM1bw"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -774,17 +745,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/kimptonaysla/img1.webp",
-      "https://www.mallorcaroyale.com/images/kimptonaysla/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/kimptonaysla/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/kimptonaysla/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Descubre el Kimpton Aysla Mallorca",
       "description": "Sumérgete en el lujo y la tranquilidad del Kimpton Aysla Mallorca en este recorrido visual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/kimptonaysla_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/kimptonaysla_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/hmj1pnATVfA"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -823,17 +793,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/sonbunyola/img1.webp",
-      "https://www.mallorcaroyale.com/images/sonbunyola/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/sonbunyola/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/sonbunyola/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Descubre el Hotel Son Bunyola Villas",
       "description": "Explora la serenidad y el lujo del Hotel Son Bunyola Villas en este recorrido visual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/sonbunyola_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/sonbunyola_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/HSdbk6IC9I0"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "false" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
@@ -872,17 +841,16 @@
       "bestRating": "5"
     },
     "image": [
-      "https://www.mallorcaroyale.com/images/granhotelsoller/img1.webp",
-      "https://www.mallorcaroyale.com/images/granhotelsoller/img2.webp"
+      "https://www.mallorcaroyale.com/assets/images/granhotelsoller/img1.webp",
+      "https://www.mallorcaroyale.com/assets/images/granhotelsoller/img2.webp"
     ],
     "subjectOf": {
       "@type": "VideoObject",
       "name": "Explora el Gran Hotel Sóller",
       "description": "Descubre la elegancia y el encanto del Gran Hotel Sóller en este recorrido visual.",
       "thumbnailUrl": "https://www.mallorcaroyale.com/videos/granhotelsoller_thumbnail.jpg",
-      "contentUrl": "https://www.mallorcaroyale.com/videos/granhotelsoller_tour.mp4"
+      "contentUrl": "https://www.youtube.com/embed/6hYfSM38YIg"
     },
-    "review": [],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Spa y masajes", "value": "true" },
       { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },

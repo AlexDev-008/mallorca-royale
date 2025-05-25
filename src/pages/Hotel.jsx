@@ -9,7 +9,7 @@ import {useHotels} from "../context/HotelContext.jsx";
 import StarRating from "../components/StarRating.jsx";
 import {getRatingColor} from "../hooks/getRatingColor.js";
 import {getWeather} from "../hooks/getWeather.js";
-import {getRestaurants} from "../services/services.js";
+import {getRestaurants, getReviews} from "../services/services.js";
 import {RestaurantCardCarousel} from '../components/RestaurantCardCarousel';
 
 export function Hotel() {
@@ -19,6 +19,10 @@ export function Hotel() {
     const { hotels } = useHotels();
     const [weather, setWeather] = useState();
     const [restaurants, setRestaurants] = useState();
+    const [reviews, setReviews] = useState([]);
+    const [averageScore, setAverageScore] = useState();
+    const [comment, setComment] = useState();
+    const [userNotLoggedError, setUserNotLoggedError] = useState(false);
     const Icons = {
         "Spa y masajes": faSpa,
         "Piscina": faPersonSwimming,
@@ -43,6 +47,22 @@ export function Hotel() {
         return R * c;
     }
 
+    function getQuality(score) {
+        if(score >= 9){
+            return t("general.excellent");
+        }else if(score >= 7){
+            return t("general.reallyGood");
+        }else if(score >= 5){
+            return t("general.good");
+        }else if(score >= 3){
+            return t("general.bad");
+        }else if(score < 3){
+            return t("general.reallyBad");
+        }else{
+            return t("general.noOpinions");
+        }
+    }
+
     useEffect(() => {
         if(hotel){
             const getNearbyRestaurants = async () => {
@@ -62,9 +82,28 @@ export function Hotel() {
                 );
             }
 
+            const getHotelReviews = async () => {
+                let hotelReviews = await getReviews();
+
+                setReviews(
+                    hotelReviews.filter(review => {
+                        return review.itemReviewed.name === hotel.name;
+                    })
+                );
+            }
+
             getNearbyRestaurants();
+            getHotelReviews();
         }
     }, [hotel]);
+
+    useEffect(() => {
+        if(reviews.length > 0){
+            const total = reviews.reduce((acc, review) => acc + review.reviewRating.ratingValue, 0);
+
+            setAverageScore(total / reviews.length);
+        }
+    }, [reviews]);
 
     useEffect(() => {
         const foundHotel = hotels.find(h => h.name.toLowerCase() === hotelName.toLowerCase());
@@ -89,6 +128,41 @@ export function Hotel() {
             alert('Tu navegador no soporta la síntesis de voz.');
         }
     };
+
+    const submitComment = async () => {
+        if(!localStorage.getItem("username")){
+            setUserNotLoggedError(true);
+        }else{
+            setUserNotLoggedError(false);
+            try {
+                const response = await fetch("http://localhost:8080/addReview.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        score: selectedRating,
+                        comment: comment,
+                        authorName: localStorage.getItem("username"),
+                        hotelName: hotel.name
+                    })
+                });
+
+                let hotelReviews = await getReviews();
+
+                setReviews(
+                    hotelReviews.filter(review => {
+                        return review.itemReviewed.name === hotel.name;
+                    })
+                );
+
+                setComment("");
+                setSelectedRating(-1);
+            } catch (err) {
+                console.error(err);
+            }
+        }
+    }
 
     return (
         <>
@@ -167,18 +241,17 @@ export function Hotel() {
                                         <Row>
                                             <Col md={4}>
                                                 <p className="fw-bold text-white my-0 p-3 fs-3 rounded-4 text-center w-100"
-                                                   style={{backgroundColor: getRatingColor(9, 1)}}
+                                                   style={{backgroundColor: getRatingColor(averageScore)}}
                                                 >
-                                                    9,1
+                                                    {averageScore ? averageScore : "?"}
                                                 </p>
                                             </Col>
                                             <Col md={8}>
                                                 <Row>
-                                                    <p className="fw-bold fs-3 mb-0">Excelente</p>
+                                                    <p className="fw-bold fs-3 mb-0">{getQuality(averageScore)}</p>
                                                 </Row>
                                                 <Row>
-                                                    <p>0 comentarios</p>
-                                                    {/*<p>{hotel.review.length} {`${hotel.review.length === 1 ? "comentario" : "comentarios"}`}</p>*/}
+                                                    <p>{reviews.length} {`${reviews.length === 1 ? t("general.comment") : t("general.comments")}`}</p>
                                                 </Row>
                                             </Col>
                                         </Row>
@@ -194,7 +267,7 @@ export function Hotel() {
                         </Row>
                         <Row className="mb-5">
                             <div className="d-flex align-items-center">
-                                <h2 className="fw-semibold d-inline-block">Descripción</h2>
+                                <h2 className="fw-semibold d-inline-block">{t("hotel.description")}</h2>
                                 <Button
                                     className="bg-transparent border-0"
                                     onClick={() => speakText(hotel.description)}
@@ -205,7 +278,7 @@ export function Hotel() {
                             <p>{hotel.description}</p>
                         </Row>
                         <Row className="mb-5">
-                            <h2 className="fw-semibold mb-3">Acerca de este alojamiento</h2>
+                            <h2 className="fw-semibold mb-3">{t("hotel.featuresTitle")}</h2>
                             {
                                 hotel.amenityFeature.map((feature, _) => {
                                     return feature.value ? (
@@ -217,12 +290,12 @@ export function Hotel() {
                                 })
                             }
                         </Row>
-                        <Row className="mb-5">
-                            <h2 className="fw-semibold mb-4">Restaurantes con estrella Michelin a 10km a la redonda</h2>
+                        <Row className="mb-5 overflow-x-hidden">
+                            <h2 className="fw-semibold mb-4">{t("hotel.restaurantsTitle")}</h2>
                             <RestaurantCardCarousel restaurants={restaurants} />
                         </Row>
                         <Row className="mb-3">
-                            <h2 className="fw-semibold mb-4">Comentarios</h2>
+                            <h2 className="fw-semibold mb-4">{t("general.commentsTitle")}</h2>
                             <Row className="d-flex justify-content-around">
                                 {
                                     [...Array(11)].map((_, index) => (
@@ -241,46 +314,66 @@ export function Hotel() {
                         <Row>
                             <Form.Control
                                 as="textarea"
-                                placeholder="Comentario"
+                                placeholder={t("general.comment")}
                                 className="p-3"
+                                value={comment}
+                                onChange={(e) => setComment(e.target.value)}
                                 style={{height: '100px', borderColor: "#252525"}}
+                                isInvalid={userNotLoggedError}
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {t("hotel.commentsError")}
+                            </Form.Control.Feedback>
                         </Row>
                         <Row className="d-flex justify-content-end mt-3 mb-5">
                             <Col className="d-flex justify-content-end p-0">
-                                <Button className="me-3 btn-outline">
-                                    Cancelar
+                                <Button
+                                    className="me-3 btn-outline"
+                                    onClick={() => {
+                                        setComment("");
+                                        setSelectedRating(-1);
+                                    }}
+                                >
+                                    {t("general.cancel")}
                                 </Button>
-                                <Button className="">
-                                    Enviar
+                                <Button
+                                    onClick={() => submitComment()}
+                                >
+                                    {t("general.send")}
                                 </Button>
                             </Col>
                         </Row>
-                        <p className="text-light p-3 bg-dark rounded-4">Este hotel no tiene comentarios todavía</p>
-                        {/*{*/}
-                        {/*    hotel.review.length === 0 &&*/}
-                        {/*    <p className="text-light p-3 bg-dark rounded-4">Este hotel no tiene comentarios todavía</p>*/}
-                        {/*}*/}
-                        {/*{*/}
-                        {/*    [...Array(hotel.review.length)].map((_, index) => (*/}
-                        {/*        <Row className="border-1 p-3 pb-4 rounded-3"*/}
-                        {/*             style={{borderColor: "#252525", borderStyle: "solid"}}>*/}
-                        {/*            <div className="d-flex align-items-center mb-3">*/}
-                        {/*                <span*/}
-                        {/*                    className="me-3 py-2 px-3 bg-info rounded-5 ">{hotel.review[index].author.name[0]}</span>*/}
-                        {/*                <p className="m-0">{hotel.review[index].author.name}</p>*/}
-                        {/*            </div>*/}
-                        {/*            <p>{hotel.review[index].reviewBody}</p>*/}
-                        {/*            <div>*/}
-                        {/*                <span className="me-3 py-2 px-3 rounded-3 text-light"*/}
-                        {/*                      style={{backgroundColor: getRatingColor(9, 1)}}*/}
-                        {/*                >*/}
-                        {/*                    {hotel.review[index].reviewRating.ratingValue}*/}
-                        {/*                </span>*/}
-                        {/*            </div>*/}
-                        {/*        </Row>*/}
-                        {/*    ))*/}
-                        {/*}*/}
+                        {
+                            reviews.length === 0 ?
+
+                                <p className="text-light p-3 bg-dark rounded-4">{t("general.noCommentsYet")}</p>
+
+                                :
+
+                                [...Array(reviews.length)].map((_, index) => (
+                                    <Row className="border-1 p-3 pb-4 rounded-3 my-5"
+                                         style={{borderColor: "#252525", borderStyle: "solid"}}>
+                                        <div className="d-flex align-items-center mb-3">
+                                        <span
+                                            className="me-3 py-2 px-3 rounded-5 "
+                                            style={{backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16)}}>
+                                            {reviews[index].author.name[0]}
+                                        </span>
+                                            <p className="m-0">{reviews[index].author.name}</p>
+                                        </div>
+                                        <p className="mb-2 text-black-50">{reviews[index].datePublished}</p>
+                                        <p>{reviews[index].reviewBody}</p>
+                                        <div>
+                                        <span className="me-3 py-2 px-3 rounded-3 text-light"
+                                              style={{backgroundColor: getRatingColor(reviews[index].reviewRating.ratingValue)}}
+                                        >
+                                            {reviews[index].reviewRating.ratingValue}
+                                        </span>
+                                        </div>
+                                    </Row>
+                                ))
+
+                        }
                     </Container>
                 </>
             }

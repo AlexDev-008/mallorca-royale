@@ -10,7 +10,7 @@ export const HotelsProvider = ({ children }) => {
     const [hotels, setHotels] = useState([]);
 
     useEffect(() => {
-        fetch("/json/hotels.json")
+        fetch("/hotels.json")
             .then(res => res.json())
             .then(data => setHotels(data))
             .catch((error) => console.error("Error cargando hoteles:", error));

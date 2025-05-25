@@ -1,0 +1,16 @@
+[
+    {
+        "@type": "Person",
+        "name": "Usuario 1",
+        "email": "usuario1@ejemplo.com",
+        "identifier": "u001",
+        "password": "claveSegura001"
+    },
+    {
+        "@type": "Person",
+        "name": "Usuario2",
+        "email": "prueba@gmail.com",
+        "identifier": "u68319dad463ba",
+        "password": "claveSegura002"
+    }
+]

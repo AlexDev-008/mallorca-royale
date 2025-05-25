@@ -135,11 +135,11 @@ export function HotelSearch() {
                                 longitude={longitudes}
                                 hotelNames={hotels.map((hotel) => hotel.name)}
                             /> :
-                            <p className="text-black-50 text-center mt-5">No hay resultados para los filtros aplicados</p>
+                            <p className="text-black-50 text-center mt-5">{t("hotelSearch.noResults")}</p>
                         }
                     </div>
                     <div className="mt-5 p-4 border-top border-bottom">
-                        <h2 className="fw-bold mb-4">Nombre del hotel</h2>
+                        <h2 className="fw-bold mb-4">{t("hotelSearch.hotelNameTitle")}</h2>
                         <Form>
                             <InputGroup>
                                 <Form.Control
@@ -151,7 +151,7 @@ export function HotelSearch() {
                         </Form>
                     </div>
                     <div className="p-4 border-bottom">
-                        <h2 className="fw-bold mb-4">Seleccionar divisas</h2>
+                        <h2 className="fw-bold mb-4">{t("hotelSearch.selectCurrency")}</h2>
                         <Form.Select onChange={handleRateChange}>
                             {Object.keys(rates).map((currency) => (
                                 <option key={currency} value={currency}>
@@ -161,11 +161,11 @@ export function HotelSearch() {
                         </Form.Select>
                     </div>
                     <div className="p-4 border-bottom">
-                        <h2 className="fw-bold mb-4">Filtrar por</h2>
+                        <h2 className="fw-bold mb-4">{t("hotelSearch.filterBy")}</h2>
                         <Row>
-                            <h3 className="fw-bold mb-3 fs-4">Precio</h3>
+                            <h3 className="fw-bold mb-3 fs-4">{t("hotelSearch.price")}</h3>
                             <Col>
-                                <FloatingLabel controlId="floatingMin" label="Mínimo" className="mb-3">
+                                <FloatingLabel controlId="floatingMin" label={t("hotelSearch.minimum")} className="mb-3">
                                     <Form.Control
                                         type="number"
                                         placeholder="0"
@@ -175,7 +175,7 @@ export function HotelSearch() {
                                 </FloatingLabel>
                             </Col>
                             <Col>
-                                <FloatingLabel controlId="floatingMax" label="Máximo" className="mb-3">
+                                <FloatingLabel controlId="floatingMax" label={t("hotelSearch.minimum")} className="mb-3">
                                     <Form.Control
                                         type="number"
                                         placeholder="0"
@@ -185,20 +185,20 @@ export function HotelSearch() {
                                 </FloatingLabel>
                             </Col>
                         </Row>
-                        <Button className="mt-2 w-100" onClick={filterHotelsByPrice}>Aplicar filtro</Button>
+                        <Button className="mt-2 w-100" onClick={filterHotelsByPrice}>{t("hotelSearch.applyFilter")}</Button>
                     </div>
                 </Col>
                 <Col xl={9} className="px-5">
                     <Row className="d-flex justify-content-between align-items-center w-100">
                         <Col xs={8} className="p-4">
-                            <h1 className="fw-bold">Busca tu hotel</h1>
-                            <small>{Object.keys(hotels[0]).length > 0 ? hotels.length : 0} resultados</small>
+                            <h1 className="fw-bold">{t("hotelSearch.title")}</h1>
+                            <small>{Object.keys(hotels[0]).length > 0 ? hotels.length : 0} {t("general.results")}</small>
                         </Col>
                         <Col xs={4} className="m-0 p-0">
-                            <FloatingLabel controlId="floatingSelect" label="Ordenado por">
+                            <FloatingLabel controlId="floatingSelect" label={t("hotelSearch.orderedBy")}>
                                 <Form.Select className="mt-1" onChange={handlePriceOrderChange} value={priceOrder}>
-                                    <option value="up">Precio (creciente)</option>
-                                    <option value="down">Precio (decreciente)</option>
+                                    <option value="up">{t("hotelSearch.increasingPrice")}</option>
+                                    <option value="down">{t("hotelSearch.decreasingPrice")}</option>
                                 </Form.Select>
                             </FloatingLabel>
                         </Col>
@@ -215,13 +215,11 @@ export function HotelSearch() {
                                             price={hotel.priceRange}
                                             bestStars={parseInt(hotel.starRating.bestRating)}
                                             stars={parseInt(hotel.starRating.ratingValue)}
-                                            userRating={0}
                                             image={hotel.image[0]}
-                                            reviews={[]}    //Leer del JSON de reseñas
                                         />
                                     </Col>
                                 )) :
-                                <p className="text-black-50 text-center mt-5">No hay resultados para los filtros aplicados</p>
+                                <p className="text-black-50 text-center mt-5">{t("hotelSearch.noResults")}</p>
                         }
                     </Row>
                     {totalPages > 1 && (

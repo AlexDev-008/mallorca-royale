@@ -1,13 +1,54 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, Col, Row} from "react-bootstrap";
 import StarRating from "./StarRating.jsx";
 import {t} from "i18next";
 import {getRatingColor} from "../hooks/getRatingColor.js";
 import {Link} from "react-router-dom";
 import useMediaQuery from "../hooks/useMediaQuery.js";
+import {getReviews} from "../services/services.js";
 
-export function HotelCard({hotelName, city, street, price, bestStars, stars, userRating, reviews, image}) {
+export function HotelCard({hotelName, city, street, price, bestStars, stars, image}) {
     const isSmallScreen = useMediaQuery('(max-width: 730px)');
+    const [reviews, setReviews] = useState([]);
+    const [averageScore, setAverageScore] = useState();
+
+    function getQuality(score) {
+        if(score >= 9){
+            return t("general.excellent");
+        }else if(score >= 7){
+            return t("general.reallyGood");
+        }else if(score >= 5){
+            return t("general.good");
+        }else if(score >= 3){
+            return t("general.bad");
+        }else if(score < 3){
+            return t("general.reallyBad");
+        }else{
+            return t("general.noOpinions");
+        }
+    }
+
+    useEffect(() => {
+        const getHotelReviews = async () => {
+            let hotelReviews = await getReviews();
+
+            setReviews(
+                hotelReviews.filter(review => {
+                    return review.itemReviewed.name === hotelName;
+                })
+            );
+        }
+
+        getHotelReviews();
+    }, []);
+
+    useEffect(() => {
+        if(reviews.length > 0){
+            const total = reviews.reduce((acc, review) => acc + review.reviewRating.ratingValue, 0);
+
+            setAverageScore(total / reviews.length);
+        }
+    }, [reviews]);
 
     return (
         <>
@@ -26,25 +67,25 @@ export function HotelCard({hotelName, city, street, price, bestStars, stars, use
                     <Row>
                         <Col sm={2}>
                             <p className={`fw-bold text-white my-0 p-3 fs-3 rounded-4 text-center mb-0 `}
-                               style={{backgroundColor: getRatingColor(9, 1), width:"80px"}}
+                               style={{backgroundColor: getRatingColor(averageScore), width:"80px"}}
                             >
-                                9,1
+                                {averageScore ? averageScore : "?"}
                             </p>
                         </Col>
                         <Col sm={8} className="text-white">
                             <Row>
-                                <p className={`fw-bold fs-3 mb-0 ${isSmallScreen && "text-center"}`}>Excelente</p>
+                                <p className={`fw-bold fs-3 mb-0 ${isSmallScreen && "text-center"}`}>{getQuality(averageScore)}</p>
                             </Row>
                             <Row>
                                 <p className={`mb-0 ${isSmallScreen && "text-center"}`}>
-                                    {reviews.length} {`${reviews.length === 1 ? "comentario" : "comentarios"}`}
+                                    {reviews.length} {`${reviews.length === 1 ? t("general.comment") : t("general.comments")}`}
                                 </p>
                             </Row>
                         </Col>
                         <Col md={2} className="d-flex justify-content-end align-items-center">
                             <Link to={`/hotel/${hotelName}`} className={`${isSmallScreen && "w-100 mt-3"}`}>
                                 <Button className={`px-5 h-50 ${isSmallScreen && "w-100"}`}>
-                                    Ver
+                                    {t("general.view")}
                                 </Button>
                             </Link>
                         </Col>

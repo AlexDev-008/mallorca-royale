@@ -1,7 +1,28 @@
 {
   "general": {
     "logIn": "Iniciar sesión",
-    "search": "Buscar"
+    "signUp": "Registrarse",
+    "username": "Nombre usuario",
+    "password": "Contraseña",
+    "noAccount": "¿No tienes cuenta?",
+    "haveAccount": "¿Ya tienes cuenta?",
+    "search": "Buscar",
+    "results": "resultados",
+    "view": "Ver",
+    "comment": "comentario",
+    "comments": "comentarios",
+    "commentsTitle": "Comentarios",
+    "excellent": "Excelente",
+    "reallyGood": "Muy bueno",
+    "good": "Bueno",
+    "bad": "Malo",
+    "reallyBad": "Muy malo",
+    "noOpinions": "Sin valoraciones",
+    "send": "Enviar",
+    "cancel": "Cancelar",
+    "noCommentsYet": "Este hotel no tiene comentarios todavía",
+    "viewWeb": "Ver sitio web",
+    "footerText": "© 2025 Mallorca Royale, Inc., una empresa de Mallorca Royale Group. Todos los derechos reservados. Mallorca Royale y el logotipo de Mallorca Royale son marcas comerciales o marcas comerciales registradas de Mallorca Royale, Inc. Vacationspot, S.L., Agencia de Viajes, I-AV-0000631.3."
   },
   "navbar": {
     "hotels": "Hoteles",
@@ -18,7 +39,29 @@
     "carrouselTitle": "Nuestros mejores hoteles",
     "seeHotel":  "Ver hotel"
   },
+  "hotelSearch": {
+    "noResults": "No hay resultados para los filtros aplicados",
+    "hotelNameTitle": "Nombre del hotel",
+    "selectCurrency": "Seleccionar divisas",
+    "filterBy": "Filtrar por",
+    "price": "Precio",
+    "applyFilter": "Aplicar filtro",
+    "title": "Busca tu hotel",
+    "increasingPrice": "Precio (creciente)",
+    "decreasingPrice": "Precio (decreciente)",
+    "minimum": "Mínimo",
+    "maximum": "Maximum",
+    "orderedBy": "Ordenado por"
+  },
   "hotel": {
-    "perNight": " / por noche"
+    "perNight": " / por noche",
+    "description": "Descripción",
+    "featuresTitle": "Acerca de este alojamiento",
+    "restaurantsTitle": "Restaurantes con estrella Michelin a 10km a la redonda",
+    "commentsError": "Debes inciar sesión para poder escribir comentarios"
+  },
+  "aboutUs": {
+    "aboutUs": "Sobre nosotros",
+    "videoTitle": "Vídeo Explicativo"
   }
 }

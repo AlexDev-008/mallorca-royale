@@ -1,10 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import {t} from "i18next";
 
 export function AboutUs() {
     return (
         <Container className="my-5">
-            <h1 className="mb-4 text-center">Sobre Nosotros</h1>
+            <h1 className="mb-4 text-center">{t("aboutUs.aboutUs")}</h1>
 
             <Row className="mb-5">
                 <Col>
@@ -46,7 +47,7 @@ export function AboutUs() {
 
             <Row className="mb-5">
                 <Col>
-                    <h2 className="mb-3">Vídeo Explicativo</h2>
+                    <h2 className="mb-3">{t("aboutUs.videoTitle")}</h2>
                     <div className="ratio ratio-16x9">
                         <iframe
                             src="https://www.youtube.com/embed/dQw4w9WgXcQ"

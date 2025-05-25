@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel, Card } from "react-bootstrap";
+import {t} from "i18next";
 
 export function RestaurantCardCarousel ({ restaurants }) {
     if (!restaurants || restaurants.length === 0) {
@@ -48,7 +49,7 @@ export function RestaurantCardCarousel ({ restaurants }) {
                                         {address?.streetAddress}, {address?.addressLocality}
                                     </Card.Text>
                                     {telephone && <Card.Text>📞 {telephone}</Card.Text>}
-                                    {url && <Card.Link href={url} target="_blank">Ver sitio web</Card.Link>}
+                                    {url && <Card.Link href={url} target="_blank">{t("general.viewWeb")}</Card.Link>}
                                 </Card.Body>
                             </Card>
                         </Carousel.Item>
