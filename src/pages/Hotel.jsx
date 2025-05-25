@@ -11,6 +11,7 @@ import {getRatingColor} from "../hooks/getRatingColor.js";
 import {getWeather} from "../hooks/getWeather.js";
 import {getRestaurants, getReviews} from "../services/services.js";
 import {RestaurantCardCarousel} from '../components/RestaurantCardCarousel';
+import { Helmet } from "react-helmet";
 
 export function Hotel() {
     const { hotelName } = useParams();
@@ -169,6 +170,11 @@ export function Hotel() {
             {
                 hotel &&
                 <>
+                    <Helmet>
+                        <script type="application/ld+json">
+                            {JSON.stringify(hotel)}
+                        </script>
+                    </Helmet>
                     <Container className="my-5">
                         <Row className="gx-0 mb-5">
                             <h1 className="fw-bold">{hotel.name}</h1>
@@ -198,7 +204,8 @@ export function Hotel() {
                                     <Col className="d-flex">
                                         <div
                                             className="w-100 text-white d-flex align-items-center justify-content-center rounded-4 overflow-hidden">
-                                            <img src={hotel.image[0]} alt="Imagen 1" style={{height: "350px"}} className="rounded-4"/>
+                                            <img src={hotel.image[0]} alt="Imagen 1" style={{height: "350px"}}
+                                                 className="rounded-4"/>
                                         </div>
                                     </Col>
                                 </Row>
@@ -206,7 +213,8 @@ export function Hotel() {
                                     <Col className="d-flex">
                                         <div
                                             className="w-100 text-white d-flex align-items-center justify-content-center rounded-4 overflow-hidden">
-                                            <img src={hotel.image[1]} alt="Imagen 2" style={{height: "350px"}} className="rounded-4"/>
+                                            <img src={hotel.image[1]} alt="Imagen 2" style={{height: "350px"}}
+                                                 className="rounded-4"/>
                                         </div>
                                     </Col>
                                 </Row>
@@ -292,7 +300,7 @@ export function Hotel() {
                         </Row>
                         <Row className="mb-5 overflow-x-hidden">
                             <h2 className="fw-semibold mb-4">{t("hotel.restaurantsTitle")}</h2>
-                            <RestaurantCardCarousel restaurants={restaurants} />
+                            <RestaurantCardCarousel restaurants={restaurants}/>
                         </Row>
                         <Row className="mb-3">
                             <h2 className="fw-semibold mb-4">{t("general.commentsTitle")}</h2>
@@ -374,6 +382,15 @@ export function Hotel() {
                                 ))
 
                         }
+                        <button
+                            className="btn btn-primary position-fixed bottom-0 end-0 m-3"
+                            onClick={() => {
+                                window.scrollTo({top: 0, behavior: 'smooth'});
+                            }}
+                            aria-label="Volver al inicio"
+                        >
+                            ↑
+                        </button>
                     </Container>
                 </>
             }

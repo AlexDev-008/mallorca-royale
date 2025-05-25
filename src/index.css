@@ -68,7 +68,7 @@ body{
 }
 
 .home-background{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../public/homeBackground.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../public/homeBackground.webp");
   background-size: cover;
 }
 

@@ -14,6 +14,15 @@ export function Home({hotels}) {
             <AnimatedSection>
                 <HotelCarrouselSection hotels={hotels}></HotelCarrouselSection>
             </AnimatedSection>
+            <button
+                className="btn btn-primary position-fixed bottom-0 end-0 m-3"
+                onClick={() => {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }}
+                aria-label="Volver al inicio"
+            >
+                ↑
+            </button>
         </Container>
     );
 }

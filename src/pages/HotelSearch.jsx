@@ -165,7 +165,8 @@ export function HotelSearch() {
                         <Row>
                             <h3 className="fw-bold mb-3 fs-4">{t("hotelSearch.price")}</h3>
                             <Col>
-                                <FloatingLabel controlId="floatingMin" label={t("hotelSearch.minimum")} className="mb-3">
+                                <FloatingLabel controlId="floatingMin" label={t("hotelSearch.minimum")}
+                                               className="mb-3">
                                     <Form.Control
                                         type="number"
                                         placeholder="0"
@@ -175,7 +176,8 @@ export function HotelSearch() {
                                 </FloatingLabel>
                             </Col>
                             <Col>
-                                <FloatingLabel controlId="floatingMax" label={t("hotelSearch.minimum")} className="mb-3">
+                                <FloatingLabel controlId="floatingMax" label={t("hotelSearch.minimum")}
+                                               className="mb-3">
                                     <Form.Control
                                         type="number"
                                         placeholder="0"
@@ -185,7 +187,8 @@ export function HotelSearch() {
                                 </FloatingLabel>
                             </Col>
                         </Row>
-                        <Button className="mt-2 w-100" onClick={filterHotelsByPrice}>{t("hotelSearch.applyFilter")}</Button>
+                        <Button className="mt-2 w-100"
+                                onClick={filterHotelsByPrice}>{t("hotelSearch.applyFilter")}</Button>
                     </div>
                 </Col>
                 <Col xl={9} className="px-5">
@@ -239,6 +242,15 @@ export function HotelSearch() {
                     )}
                 </Col>
             </Row>
+            <button
+                className="btn btn-primary position-fixed bottom-0 end-0 m-3"
+                onClick={() => {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }}
+                aria-label="Volver al inicio"
+            >
+                ↑
+            </button>
         </Container>
     );
 }

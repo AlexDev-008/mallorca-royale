@@ -10,12 +10,15 @@ export function AboutUs() {
             <Row className="mb-5">
                 <Col>
                     <p>
-                        Este proyecto ha sido desarrollado como parte de la asignatura de Tecnología Multimedia de Ingeniería Informática.
-                        El objetivo es aplicar los conocimientos impartidos en la asignatura en una aplicación web real y funcional. En esta web app podemos buscar hoteles,
+                        Este proyecto ha sido desarrollado como parte de la asignatura de Tecnología Multimedia de
+                        Ingeniería Informática.
+                        El objetivo es aplicar los conocimientos impartidos en la asignatura en una aplicación web real
+                        y funcional. En esta web app podemos buscar hoteles,
                         filtrarlos, ver detalles sobre los mismos y escribir y leer comentarios de otros usuarios.
                     </p>
                     <p>
-                        Se han aplicado las buenas prácticas para el diseño de web apps y la aplicación ha sido desarrollada usando Bootstrap y ReactJS.
+                        Se han aplicado las buenas prácticas para el diseño de web apps y la aplicación ha sido
+                        desarrollada usando Bootstrap y ReactJS.
                     </p>
                 </Col>
             </Row>
@@ -23,7 +26,7 @@ export function AboutUs() {
             <Row className="mb-5 d-flex justify-content-between">
                 <Col md={5} className="mb-5">
                     <Card>
-                        <Card.Img variant="top" src="/homeBackground.jpg" alt="Foto del desarrollador 1"/>
+                        <Card.Img variant="top" src="/homeBackground.webp" alt="Foto del desarrollador 1"/>
                         <Card.Body className="primary text-light rounded-bottom-2">
                             <Card.Title>Alex Rodríguez</Card.Title>
                             <Card.Text>
@@ -34,7 +37,7 @@ export function AboutUs() {
                 </Col>
                 <Col md={5} className="mb-5">
                     <Card>
-                        <Card.Img variant="top" src="/homeBackground.jpg" alt="Foto del desarrollador 2" />
+                        <Card.Img variant="top" src="/homeBackground.webp" alt="Foto del desarrollador 2"/>
                         <Card.Body className="primary text-light rounded-bottom-2">
                             <Card.Title>Javier Torán</Card.Title>
                             <Card.Text>
@@ -57,6 +60,15 @@ export function AboutUs() {
                     </div>
                 </Col>
             </Row>
+            <button
+                className="btn btn-primary position-fixed bottom-0 end-0 m-3"
+                onClick={() => {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }}
+                aria-label="Volver al inicio"
+            >
+                ↑
+            </button>
         </Container>
     );
 }

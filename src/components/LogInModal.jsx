@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import {useEffect, useState} from "react";
 import {getUsers} from "../services/services.js";
 import {t} from "i18next";
+import button from "bootstrap/js/src/button.js";
 
 export function LogInModal({showModal, setShowModal}) {
     const [logIn, setLogIn] = useState(true);
