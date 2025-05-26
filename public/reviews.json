@@ -55,5 +55,62 @@
             "@type": "Hotel",
             "name": "Gran Hotel S\u00f3ller"
         }
+    },
+    {
+        "@type": "Review",
+        "author": {
+            "@type": "Person",
+            "name": "Usuario 1"
+        },
+        "datePublished": "2025-05-26",
+        "reviewBody": "prueba",
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 8,
+            "bestRating": "10",
+            "worstRating": "0"
+        },
+        "itemReviewed": {
+            "@type": "Hotel",
+            "name": "Ona Palmira Paradise Paguera"
+        }
+    },
+    {
+        "@type": "Review",
+        "author": {
+            "@type": "Person",
+            "name": "Usuario 1"
+        },
+        "datePublished": "2025-05-26",
+        "reviewBody": "Prueba 2",
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": "10",
+            "worstRating": "0"
+        },
+        "itemReviewed": {
+            "@type": "Hotel",
+            "name": "Ona Palmira Paradise Paguera"
+        }
+    },
+    {
+        "@type": "Review",
+        "author": {
+            "@type": "Person",
+            "name": "Usuario 1"
+        },
+        "datePublished": "2025-05-26",
+        "reviewBody": "Prueba",
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 0,
+            "bestRating": "10",
+            "worstRating": "0"
+        },
+        "itemReviewed": {
+            "@type": "Hotel",
+            "name": "Hotel Convent de la Missi\u00f3"
+        }
     }
 ]

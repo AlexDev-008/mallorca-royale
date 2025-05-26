@@ -21,10 +21,9 @@ export function HotelSearch() {
     const [lowPrice, setLowPrice] = useState();
     const [highPrice, setHighPrice] = useState();
     const [priceOrder, setPriceOrder] = useState("up");
-    const [rates, setRates] = useState([]);
-    const [currentRate, setCurrentRate] = useState("EUR");
-    const [convertedPrices, setConvertedPrices] = useState([]);
     const isMediumScreen = useMediaQuery("(max-width: 1200px)");
+    const [lowStar, setLowStar] = useState();
+    const [highStar, setHighStar] = useState();
 
     const [currentPage, setCurrentPage] = useState(1);
     const resultsPerPage = 10;
@@ -35,17 +34,7 @@ export function HotelSearch() {
     const totalPages = Math.ceil(hotels.length / resultsPerPage);
 
     useEffect(() => {
-        const fetchRates = () => {
-            const { rates, error } = getRates();
-            if (rates) {
-                setRates(rates);
-            } else {
-                console.error(error);
-            }
-        };
-
         setAllHotels(hotels);
-        fetchRates();
     }, []);
 
     useEffect(() => {
@@ -57,6 +46,8 @@ export function HotelSearch() {
             setLongitudes(longitudes);
             setLowPrice(hotels[0].priceRange);
             setHighPrice(hotels[hotels.length - 1].priceRange);
+            setLowStar(hotels[0].starRating.ratingValue);
+            setHighStar(hotels[hotels.length - 1].starRating.ratingValue);
         } else {
             setLatitudes([]);
             setLongitudes([]);
@@ -99,11 +90,6 @@ export function HotelSearch() {
         setCurrentPage(1);
     }
 
-    const handleRateChange = (e) => {
-        setCurrentRate(e.target.value);
-        console.log(getExchangeRate("EUR", e.target.value))
-    }
-
     const handlePriceRangeChange = (price) => {
         const newLowPrice = price.min;
         const newHighPrice = price.max;
@@ -116,11 +102,16 @@ export function HotelSearch() {
         }
     }
 
-    const filterHotelsByPrice = () => {
-        const filteredHotels = allHotels.filter(hotel =>
+    const filterHotels = () => {
+        let filteredHotels = allHotels.filter(hotel =>
             hotel.priceRange >= lowPrice && hotel.priceRange <= highPrice
         );
-        setHotels(filteredHotels);
+
+        filteredHotels = filteredHotels.filter(hotel =>
+            hotel.starRating.ratingValue >= lowStar && hotel.starRating.ratingValue <= highStar
+        );
+
+        setHotels(filteredHotels.length > 0 ? filteredHotels : [{}]);
         setCurrentPage(1);
     }
 
@@ -151,16 +142,6 @@ export function HotelSearch() {
                         </Form>
                     </div>
                     <div className="p-4 border-bottom">
-                        <h2 className="fw-bold mb-4">{t("hotelSearch.selectCurrency")}</h2>
-                        <Form.Select onChange={handleRateChange}>
-                            {Object.keys(rates).map((currency) => (
-                                <option key={currency} value={currency}>
-                                    {currency}{` (${currencySymbols[currency]})`}
-                                </option>
-                            ))}
-                        </Form.Select>
-                    </div>
-                    <div className="p-4 border-bottom">
                         <h2 className="fw-bold mb-4">{t("hotelSearch.filterBy")}</h2>
                         <Row>
                             <h3 className="fw-bold mb-3 fs-4">{t("hotelSearch.price")}</h3>
@@ -176,7 +157,7 @@ export function HotelSearch() {
                                 </FloatingLabel>
                             </Col>
                             <Col>
-                                <FloatingLabel controlId="floatingMax" label={t("hotelSearch.minimum")}
+                                <FloatingLabel controlId="floatingMax" label={t("hotelSearch.maximum")}
                                                className="mb-3">
                                     <Form.Control
                                         type="number"
@@ -187,15 +168,40 @@ export function HotelSearch() {
                                 </FloatingLabel>
                             </Col>
                         </Row>
+                        <Row>
+                            <h3 className="fw-bold mb-3 fs-4">{t("hotelSearch.stars")}</h3>
+                            <Col>
+                                <FloatingLabel controlId="floatingMin" label={t("hotelSearch.minimum")}
+                                               className="mb-3">
+                                    <Form.Control
+                                        type="number"
+                                        placeholder="0"
+                                        value={lowStar}
+                                        onChange={(e) => setLowStar(Number(e.target.value))}
+                                    />
+                                </FloatingLabel>
+                            </Col>
+                            <Col>
+                                <FloatingLabel controlId="floatingMax" label={t("hotelSearch.maximum")}
+                                               className="mb-3">
+                                    <Form.Control
+                                        type="number"
+                                        placeholder="0"
+                                        value={highStar}
+                                        onChange={(e) => setHighStar(Number(e.target.value))}
+                                    />
+                                </FloatingLabel>
+                            </Col>
+                        </Row>
                         <Button className="mt-2 w-100"
-                                onClick={filterHotelsByPrice}>{t("hotelSearch.applyFilter")}</Button>
+                                onClick={filterHotels}>{t("hotelSearch.applyFilter")}</Button>
                     </div>
                 </Col>
                 <Col xl={9} className="px-5">
                     <Row className="d-flex justify-content-between align-items-center w-100">
                         <Col xs={8} className="p-4">
                             <h1 className="fw-bold">{t("hotelSearch.title")}</h1>
-                            <small>{Object.keys(hotels[0]).length > 0 ? hotels.length : 0} {t("general.results")}</small>
+                            <small>{(hotels.length > 0 ? (hotels[0] && Object.keys(hotels[0]).length > 0 ? hotels.length : 0) : "")} {t("general.results")}</small>
                         </Col>
                         <Col xs={4} className="m-0 p-0">
                             <FloatingLabel controlId="floatingSelect" label={t("hotelSearch.orderedBy")}>
@@ -208,7 +214,7 @@ export function HotelSearch() {
                     </Row>
                     <Row>
                         {
-                            Object.keys(hotels[0]).length > 0 ?
+                            hotels.length > 0 && Object.keys(hotels[0])?.length > 0 ?
                                 currentHotels.map((hotel, i) => (
                                     <Col xs={12} key={hotel.name}>
                                         <HotelCard

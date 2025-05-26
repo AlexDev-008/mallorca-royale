@@ -37,7 +37,8 @@
     "featureTitle3": "Precios en tu moneda",
     "featureDescription3": "Consulta el costo de los hoteles en tu moneda local. ¡Sin sorpresas en el precio!",
     "carrouselTitle": "Nuestros mejores hoteles",
-    "seeHotel":  "Ver hotel"
+    "seeHotel":  "Ver hotel",
+    "hotelNotFound": "El hotel no existe en esta página"
   },
   "hotelSearch": {
     "noResults": "No hay resultados para los filtros aplicados",
@@ -50,8 +51,9 @@
     "increasingPrice": "Precio (creciente)",
     "decreasingPrice": "Precio (decreciente)",
     "minimum": "Mínimo",
-    "maximum": "Maximum",
-    "orderedBy": "Ordenado por"
+    "maximum": "Máximo",
+    "orderedBy": "Ordenado por",
+    "stars": "Estrellas"
   },
   "hotel": {
     "perNight": " / por noche",
@@ -62,6 +64,10 @@
   },
   "aboutUs": {
     "aboutUs": "Sobre nosotros",
-    "videoTitle": "Vídeo Explicativo"
+    "videoTitle": "Vídeo Explicativo",
+    "summary1": "Este proyecto ha sido desarrollado como parte de la asignatura de Tecnología Multimedia de Ingeniería Informática. El objetivo es aplicar los conocimientos impartidos en la asignatura en una aplicación web real y funcional. En esta web app podemos buscar hoteles, filtrarlos, ver detalles sobre los mismos y escribir y leer comentarios de otros usuarios.",
+    "summary2": "Se han aplicado las buenas prácticas para el diseño de web apps y la aplicación ha sido desarrollada usando Bootstrap y ReactJS.",
+    "cardSubtitle": "Desarrollador Frontend",
+    "cardText": "Estudiante de último curso de Ingeniería Informática. Encargado del desarrollo de la interfaz usando React, Bootstrap y JavaScript."
   }
 }

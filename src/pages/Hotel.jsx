@@ -1,4 +1,4 @@
-import {Button, Col, Container, FloatingLabel, Form, Row} from "react-bootstrap";
+import {Button, Col, Container, FloatingLabel, Form, Modal, Row} from "react-bootstrap";
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import i18n, {t} from "i18next";
@@ -24,6 +24,8 @@ export function Hotel() {
     const [averageScore, setAverageScore] = useState();
     const [comment, setComment] = useState();
     const [userNotLoggedError, setUserNotLoggedError] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [modalImage, setModalImage] = useState("");
     const Icons = {
         "Spa y masajes": faSpa,
         "Piscina": faPersonSwimming,
@@ -34,6 +36,13 @@ export function Hotel() {
         "Club infantil": faBabyCarriage,
         "Discoteca": faChampagneGlasses
     };
+
+    const openModal = (imgSrc) => {
+        setModalImage(imgSrc);
+        setShowModal(true);
+    };
+
+    const closeModal = () => setShowModal(false);
 
     function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
         const R = 6371;
@@ -100,9 +109,8 @@ export function Hotel() {
 
     useEffect(() => {
         if(reviews.length > 0){
-            const total = reviews.reduce((acc, review) => acc + review.reviewRating.ratingValue, 0);
-
-            setAverageScore(total / reviews.length);
+            const total = reviews.reduce((acc, review) => acc + parseInt(review.reviewRating.ratingValue), 0);
+            setAverageScore(Math.round((total / reviews.length) * 100) / 100);
         }
     }, [reviews]);
 
@@ -136,7 +144,8 @@ export function Hotel() {
         }else{
             setUserNotLoggedError(false);
             try {
-                const response = await fetch("http://localhost:8080/addReview.php", {
+                // PHP CALL
+                const response = await fetch("https://www.mallorcaroyale.com/addReview.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -187,7 +196,7 @@ export function Hotel() {
                             <Col md={7} className="d-flex mb-5">
                                 <div
                                     className="w-100 text-white d-flex align-items-center justify-content-center rounded-4 overflow-hidden"
-                                    style={{minHeight: "300px"}}
+                                    style={{ minHeight: "300px" }}
                                 >
                                     <iframe
                                         width="100%"
@@ -203,23 +212,43 @@ export function Hotel() {
                                 <Row>
                                     <Col className="d-flex">
                                         <div
-                                            className="w-100 text-white d-flex align-items-center justify-content-center rounded-4 overflow-hidden">
-                                            <img src={hotel.image[0]} alt="Imagen 1" style={{height: "350px"}}
-                                                 className="rounded-4"/>
+                                            className="w-100 text-white d-flex align-items-center justify-content-center rounded-4 overflow-hidden"
+                                            onClick={() => openModal(hotel.image[0])}
+                                            style={{ cursor: "pointer" }}
+                                        >
+                                            <img
+                                                src={hotel.image[0]}
+                                                alt="Imagen 1"
+                                                style={{ height: "350px" }}
+                                                className="rounded-4"
+                                            />
                                         </div>
                                     </Col>
                                 </Row>
                                 <Row className="mt-4">
                                     <Col className="d-flex">
                                         <div
-                                            className="w-100 text-white d-flex align-items-center justify-content-center rounded-4 overflow-hidden">
-                                            <img src={hotel.image[1]} alt="Imagen 2" style={{height: "350px"}}
-                                                 className="rounded-4"/>
+                                            className="w-100 text-white d-flex align-items-center justify-content-center rounded-4 overflow-hidden"
+                                            onClick={() => openModal(hotel.image[1])}
+                                            style={{ cursor: "pointer" }}
+                                        >
+                                            <img
+                                                src={hotel.image[1]}
+                                                alt="Imagen 2"
+                                                style={{ height: "350px" }}
+                                                className="rounded-4"
+                                            />
                                         </div>
                                     </Col>
                                 </Row>
                             </Col>
                         </Row>
+
+                        <Modal show={showModal} onHide={closeModal} centered size="lg">
+                            <Modal.Body className="p-0">
+                                <img src={modalImage} alt="Imagen ampliada" className="w-100" />
+                            </Modal.Body>
+                        </Modal>
                         <Row className="mb-5">
                             <Col md={8} className="d-flex justify-content-center flex-column">
                                 <Row className="mb-5 d-flex justify-content-between align-items-center">
@@ -251,7 +280,7 @@ export function Hotel() {
                                                 <p className="fw-bold text-white my-0 p-3 fs-3 rounded-4 text-center w-100"
                                                    style={{backgroundColor: getRatingColor(averageScore)}}
                                                 >
-                                                    {averageScore ? averageScore : "?"}
+                                                    {averageScore ?? "?"}
                                                 </p>
                                             </Col>
                                             <Col md={8}>
@@ -363,8 +392,9 @@ export function Hotel() {
                                          style={{borderColor: "#252525", borderStyle: "solid"}}>
                                         <div className="d-flex align-items-center mb-3">
                                         <span
-                                            className="me-3 py-2 px-3 rounded-5 "
-                                            style={{backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16)}}>
+                                            className="me-3 py-2 px-3 rounded-5 text-light bg-black"
+                                            // style={{backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16)}}
+                                        >
                                             {reviews[index].author.name[0]}
                                         </span>
                                             <p className="m-0">{reviews[index].author.name}</p>

@@ -44,9 +44,8 @@ export function HotelCard({hotelName, city, street, price, bestStars, stars, ima
 
     useEffect(() => {
         if(reviews.length > 0){
-            const total = reviews.reduce((acc, review) => acc + review.reviewRating.ratingValue, 0);
-
-            setAverageScore(total / reviews.length);
+            const total = reviews.reduce((acc, review) => acc + parseInt(review.reviewRating.ratingValue), 0);
+            setAverageScore(total !== 0 ? (Math.round((total / reviews.length) * 100) / 100) : 0);
         }
     }, [reviews]);
 
@@ -69,7 +68,7 @@ export function HotelCard({hotelName, city, street, price, bestStars, stars, ima
                             <p className={`fw-bold text-white my-0 p-3 fs-3 rounded-4 text-center mb-0 `}
                                style={{backgroundColor: getRatingColor(averageScore), width:"80px"}}
                             >
-                                {averageScore ? averageScore : "?"}
+                                {averageScore ?? "?"}
                             </p>
                         </Col>
                         <Col sm={8} className="text-white">

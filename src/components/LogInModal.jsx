@@ -34,7 +34,8 @@ export function LogInModal({showModal, setShowModal}) {
         }
 
         try {
-            const response = await fetch("http://localhost:8080/signup.php", {
+            // PHP CALL
+            const response = await fetch("https://www.mallorcaroyale.com/signup.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -136,9 +137,9 @@ export function LogInModal({showModal, setShowModal}) {
                         >
                             {
                                 logIn ?
-                                    t("general.logIn")
-                                    :
                                     t("general.signUp")
+                                    :
+                                    t("general.logIn")
                             }
 
                         </span>

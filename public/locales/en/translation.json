@@ -37,7 +37,8 @@
     "featureTitle3": "Prices in your currency",
     "featureDescription3": "Check hotel costs in your local currency. No price surprises!",
     "carrouselTitle": "Our top hotels",
-    "seeHotel": "View hotel"
+    "seeHotel": "View hotel",
+    "hotelNotFound": "The hotel doesn't exist in this page"
   },
   "hotelSearch": {
     "noResults": "No results for the applied filters",
@@ -51,7 +52,8 @@
     "decreasingPrice": "Price (descending)",
     "minimum": "Minimum",
     "maximum": "Maximum",
-    "orderedBy": "Ordered by"
+    "orderedBy": "Ordered by",
+    "stars": "Stars"
   },
   "hotel": {
     "perNight": " / per night",
@@ -62,6 +64,10 @@
   },
   "aboutUs": {
     "aboutUs": "About Us",
-    "videoTitle": "Explanatory Video"
+    "videoTitle": "Explanatory Video",
+    "summary1": "This project has been developed as part of the Multimedia Technology course in the Computer Engineering degree. The goal is to apply the knowledge taught in the course to a real and functional web application. In this web app, users can search for hotels, filter results, view detailed information, and write and read comments from other users.",
+    "summary2": "Best practices for web app design have been applied, and the application has been developed using Bootstrap and ReactJS.",
+    "cardSubtitle": "Frontend Developer",
+    "cardText": "Final-year Computer Science student. Responsible for interface development using React, Bootstrap, and JavaScript."
   }
 }

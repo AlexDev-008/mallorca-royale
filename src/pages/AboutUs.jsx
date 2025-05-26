@@ -10,15 +10,10 @@ export function AboutUs() {
             <Row className="mb-5">
                 <Col>
                     <p>
-                        Este proyecto ha sido desarrollado como parte de la asignatura de Tecnología Multimedia de
-                        Ingeniería Informática.
-                        El objetivo es aplicar los conocimientos impartidos en la asignatura en una aplicación web real
-                        y funcional. En esta web app podemos buscar hoteles,
-                        filtrarlos, ver detalles sobre los mismos y escribir y leer comentarios de otros usuarios.
+                        {t("aboutUs.summary1")}
                     </p>
                     <p>
-                        Se han aplicado las buenas prácticas para el diseño de web apps y la aplicación ha sido
-                        desarrollada usando Bootstrap y ReactJS.
+                        {t("aboutUs.summary2")}
                     </p>
                 </Col>
             </Row>
@@ -26,22 +21,28 @@ export function AboutUs() {
             <Row className="mb-5 d-flex justify-content-between">
                 <Col md={5} className="mb-5">
                     <Card>
-                        <Card.Img variant="top" src="/homeBackground.webp" alt="Foto del desarrollador 1"/>
+                        <Card.Img variant="top" src="/developer1.webp" alt="Foto del desarrollador 1" style={{ height: '600px', width: 'auto', objectFit: 'cover' }} />
                         <Card.Body className="primary text-light rounded-bottom-2">
-                            <Card.Title>Alex Rodríguez</Card.Title>
+                            <Card.Title className="fs-3">Alex Rodríguez</Card.Title>
+                            <Card.Subtitle className="mb-3 text-light">
+                                {t("aboutUs.cardSubtitle")}
+                            </Card.Subtitle>
                             <Card.Text>
-                                Texto
+                                {t("aboutUs.cardText")}
                             </Card.Text>
                         </Card.Body>
                     </Card>
                 </Col>
                 <Col md={5} className="mb-5">
                     <Card>
-                        <Card.Img variant="top" src="/homeBackground.webp" alt="Foto del desarrollador 2"/>
+                        <Card.Img variant="top" src="/developer2.webp" alt="Foto del desarrollador 2"  style={{ height: '600px', width: 'auto', objectFit: 'cover' }}/>
                         <Card.Body className="primary text-light rounded-bottom-2">
-                            <Card.Title>Javier Torán</Card.Title>
+                            <Card.Title className="fs-3">Javier Torán</Card.Title>
+                            <Card.Subtitle className="mb-3 text-light">
+                                {t("aboutUs.cardSubtitle")}
+                            </Card.Subtitle>
                             <Card.Text>
-                                Texto
+                                {t("aboutUs.cardText")}
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -52,11 +53,18 @@ export function AboutUs() {
                 <Col>
                     <h2 className="mb-3">{t("aboutUs.videoTitle")}</h2>
                     <div className="ratio ratio-16x9">
-                        <iframe
-                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        <video
+                            width="100%"
+                            height="auto"
+                            controls
+                            preload="auto"
+                            className="rounded-4 shadow"
                             title="Video explicativo del proyecto"
-                            allowFullScreen
-                        ></iframe>
+                            aria-label="Video explicativo del proyecto"
+                        >
+                            <source src="/aboutUs.mp4" type="video/mp4"/>
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
                     </div>
                 </Col>
             </Row>
